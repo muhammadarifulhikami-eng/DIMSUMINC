@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dim Sum Inc. | Handcrafted Artisan Dim Sum â€” Open 24 Hours</title>
+    <title>Dim Sum Inc. | Handcrafted Artisan Dim Sum - Open 24 Hours</title>
         <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -266,37 +266,60 @@
 
         .mobile-hamburger {
             display: none;
-            background: none;
-            border: none;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
             color: #ffffff;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             cursor: pointer;
+            width: 42px;
+            height: 42px;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 1001;
         }
-
-        /* Mobile Drawer */
+        .mobile-hamburger:hover {
+            border-color: var(--color-mimosa);
+            color: var(--color-mimosa);
+        }
         .mobile-drawer {
             display: none;
             position: fixed;
-            top: 74px;
-            left: 16px;
-            right: 16px;
+            top: 72px;
+            left: 12px;
+            right: 12px;
             background: #141316;
-            border: 1px solid var(--border-dark);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            z-index: 999;
+            border: 1px solid rgba(229, 168, 59, 0.3);
+            border-radius: 14px;
             flex-direction: column;
-            gap: 16px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            padding: 12px;
+            gap: 4px;
+            z-index: 2500;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95);
+            animation: drawerSlide 0.25s ease;
+        }
+        @keyframes drawerSlide {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .mobile-drawer.open {
-            display: flex;
+            display: flex !important;
         }
         .mobile-drawer a {
-            padding: 8px;
+            padding: 12px 16px;
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 700;
+            color: var(--color-ivory);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .mobile-drawer a:hover, .mobile-drawer a:active {
+            background: rgba(229, 168, 59, 0.15);
+            color: var(--color-mimosa);
         }
 
         /* ========================================================
@@ -1440,55 +1463,63 @@
                 padding: 4px 8px !important;
                 font-size: 0.72rem !important;
             }
-            .modal-book-container {
-                padding: 14px 12px 18px !important;
-                width: 96% !important;
-            }
-        }
-
-                        /* ========================================================
-           BOOK MENU VIEWER MODAL - ULTRA-LARGE & FOCUSED ON READABILITY
-        ======================================================== */
-        .modal-book-backdrop {
-            display: none;
+            .modal-book-backdrop {
             position: fixed;
             inset: 0;
-            z-index: 3000;
-            background: rgba(0, 0, 0, 0.96);
-            backdrop-filter: blur(28px);
-            -webkit-backdrop-filter: blur(28px);
+            background: rgba(8, 7, 9, 0.95);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            z-index: 4000;
+            display: none;
             align-items: center;
             justify-content: center;
-            padding: 10px;
+            padding: 12px;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.25s ease;
         }
         .modal-book-backdrop.active {
             display: flex;
             opacity: 1;
         }
-
         .modal-book-container {
             background: #0c0b0d;
-            border: 2px solid var(--color-mimosa);
-            border-radius: 20px;
+            border: none !important;
+            outline: none !important;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.98);
+            border-radius: 14px;
             width: 100%;
-            max-height: 97vh;
+            height: 96vh;
+            max-height: 96vh;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.98), 0 0 45px rgba(229, 168, 59, 0.3);
-            padding: 14px 18px 16px;
+            padding: 8px 12px 10px;
             position: relative;
-            transition: max-width 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition: max-width 0.3s ease;
             overflow: hidden;
         }
         .modal-book-container.mode-pc {
-            max-width: 95vw;
-            width: 1360px;
+            max-width: 98vw;
+            width: 1440px;
         }
         .modal-book-container.mode-mobile {
-            max-width: 480px;
-            width: 96%;
+            max-width: 520px;
+            width: 98%;
+        }
+        @media (max-width: 768px) {
+            .modal-book-backdrop {
+                padding: 0 !important;
+            }
+            .modal-book-container {
+                width: 100vw !important;
+                max-width: 100vw !important;
+                height: 100vh !important;
+                max-height: 100vh !important;
+                border-radius: 0 !important;
+                border: none !important;
+                outline: none !important;
+                box-shadow: none !important;
+                padding: 6px 6px 8px !important;
+            }
         }
         .modal-book-container.is-fullscreen {
             max-width: 100vw !important;
@@ -1497,120 +1528,101 @@
             max-height: 100vh !important;
             border-radius: 0 !important;
             border: none !important;
-            padding: 10px 14px 12px !important;
+            outline: none !important;
+            box-shadow: none !important;
+            padding: 8px 12px 10px !important;
         }
 
-        /* Top Bar & Actions */
+        /* Slim Single Top Bar (Tabs + Page Badge + Zoom + Close) */
         .modal-book-top-bar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 10px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border-dark);
+            margin-bottom: 6px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             flex-shrink: 0;
-        }
-
-        /* Mode Switcher Pill Bar */
-        .view-mode-pill-bar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.04);
-            padding: 3px 6px;
-            border-radius: var(--radius-pill);
-            border: 1px solid var(--border-dark);
-            flex-shrink: 0;
+            min-height: 38px;
         }
-        .btn-mode-pill {
-            padding: 5px 14px;
-            border-radius: var(--radius-pill);
-            background: transparent;
-            border: none;
-            color: #9f9ba6;
-            font-size: 0.74rem;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: var(--transition);
-        }
-        .btn-mode-pill:hover {
-            color: #ffffff;
-        }
-        .btn-mode-pill.active {
-            background: var(--color-mimosa);
-            color: #0c0b0d;
-            font-weight: 800;
-            box-shadow: 0 2px 10px rgba(229, 168, 59, 0.3);
-        }
-
-        /* 3 Book Choice Tabs */
         .modal-book-nav-tabs {
             display: flex;
-            gap: 8px;
-            margin-bottom: 10px;
-            width: 100%;
-            flex-shrink: 0;
-            min-height: 42px;
-            align-items: stretch;
+            gap: 6px;
+            align-items: center;
+            overflow-x: auto;
+            flex: 1;
+            scrollbar-width: none;
+        }
+        .modal-book-nav-tabs::-webkit-scrollbar {
+            display: none;
         }
         .btn-book-tab {
-            flex: 1;
-            min-height: 42px;
-            height: 42px;
-            padding: 0 14px;
-            border-radius: var(--radius-pill);
-            background: #18171b;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #c5c2cc;
-            font-family: var(--font-heading);
-            font-size: 0.8rem;
+            padding: 6px 14px;
+            font-size: 0.78rem;
             font-weight: 700;
+            border-radius: var(--radius-pill);
+            background: rgba(255, 255, 255, 0.06);
+            color: #c4c1ca;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             cursor: pointer;
             white-space: nowrap;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-book-tab.active {
+            background: var(--color-mimosa);
+            color: #0c0b0d;
+            border-color: var(--color-mimosa);
+        }
+        .modal-book-top-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .modal-book-page-pill {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 5px 12px;
+            border-radius: var(--radius-pill);
+            font-size: 0.8rem;
+            font-weight: 800;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .btn-modal-close-round {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            color: #ffffff;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            flex-shrink: 0;
-            transition: var(--transition);
+            font-size: 1.25rem;
+            line-height: 1;
+            transition: all 0.2s ease;
         }
-        .btn-book-tab:hover {
-            color: #ffffff;
-            border-color: var(--color-mimosa);
-            background: #232227;
-        }
-        .btn-book-tab.active {
-            background: #ffffff !important;
-            color: #0c0b0d !important;
-            border-color: #ffffff !important;
-            font-weight: 800 !important;
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
+        .btn-modal-close-round:hover {
+            background: var(--color-mimosa);
+            color: #0c0b0d;
         }
 
-        /* Headline & Info Row */
-        .modal-book-info-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            padding: 0 4px;
-            flex-shrink: 0;
-        }
-
-        /* HUGE BOOK VIEWPORT - GIVES MAXIMUM VISIBILITY TO THE MENU PAGES */
+        /* HUGE BOOK VIEWPORT - ZERO YELLOW BORDER, MAXIMUM SCREEN REAL ESTATE */
         .book-slide-viewport {
             position: relative;
             width: 100%;
             flex: 1;
-            border-radius: 14px;
+            border-radius: 8px;
             overflow: auto;
             background: #000000;
-            border: 1px solid rgba(229, 168, 59, 0.4);
-            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.9), 0 15px 35px rgba(0, 0, 0, 0.85);
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
             user-select: none;
             touch-action: pan-x pan-y pinch-zoom;
             display: flex;
@@ -1619,18 +1631,15 @@
             cursor: zoom-in;
         }
         .modal-book-container.mode-pc .book-slide-viewport {
-            height: calc(90vh - 170px);
-            min-height: 480px;
-            max-height: 820px;
+            height: calc(96vh - 95px);
+            min-height: 500px;
         }
         .modal-book-container.mode-mobile .book-slide-viewport {
-            height: calc(88vh - 170px);
-            min-height: 460px;
-            max-height: 750px;
+            height: calc(100vh - 92px);
+            min-height: 480px;
         }
         .modal-book-container.is-fullscreen .book-slide-viewport {
-            height: calc(100vh - 145px) !important;
-            max-height: 100vh !important;
+            height: calc(100vh - 92px) !important;
         }
 
         /* Center or left spine fold shadow */
@@ -2082,22 +2091,19 @@
 
             <!-- Mobile Toggle Only (Order Online button removed per request) -->
             <div class="nav-right-actions">
-                <button class="mobile-hamburger" id="mobileToggle" aria-label="Toggle Navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button class="mobile-hamburger" id="mobileToggle" aria-label="Toggle Navigation" onclick="toggleMobileMenu(event)"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
 
     <!-- Mobile Drawer -->
     <div class="mobile-drawer" id="mobileDrawer">
-        <a href="#home" class="mobile-link">Home</a>
-        <a href="#tasting-menus" class="mobile-link">3 Buku Menu Digital</a>
-        <a href="#artisan" class="mobile-link">Artisan Craft</a>
-        <a href="#featured-menu" class="mobile-link">Menu Dim Sum</a>
-        <a href="#outlets" class="mobile-link">5 Outlets Kami</a>
-        <a href="#reservations" class="mobile-link">Reservasi & Kontak</a>
-        
+        <a href="#home" class="mobile-link" onclick="closeMobileMenu()"><i class="fas fa-home" style="color: var(--color-mimosa);"></i> Home</a>
+        <a href="#tasting-menus" class="mobile-link" onclick="closeMobileMenu()"><i class="fas fa-book-open" style="color: var(--color-mimosa);"></i> 3 Buku Menu Digital</a>
+        <a href="#artisan" class="mobile-link" onclick="closeMobileMenu()"><i class="fas fa-fire" style="color: var(--color-mimosa);"></i> Artisan Craft</a>
+        <a href="#featured-menu" class="mobile-link" onclick="closeMobileMenu()"><i class="fas fa-utensils" style="color: var(--color-mimosa);"></i> Menu Dim Sum</a>
+        <a href="#outlets" class="mobile-link" onclick="closeMobileMenu()"><i class="fas fa-store" style="color: var(--color-mimosa);"></i> 5 Outlets Kami</a>
+        <a href="#reservations" class="mobile-link" onclick="closeMobileMenu()"><i class="fas fa-calendar-alt" style="color: var(--color-mimosa);"></i> Reservasi & Kontak</a>
     </div>
 
     <!-- ========================================================
@@ -3252,7 +3258,7 @@
 
             <div class="footer-bottom-row">
                 <div>&copy; 2026 Dim Sum Inc. All Rights Reserved.</div>
-                <div>Open 24 Hours â€¢ Authentic Handcrafted Dim Sum</div>
+                <div>Open 24 Hours &bull; Authentic Handcrafted Dim Sum</div>
             </div>
         </div>
     </footer>
@@ -3262,70 +3268,37 @@
     ======================================================== -->
     <div id="bookViewerBackdrop" class="modal-book-backdrop">
         <div class="modal-book-container mode-pc" id="modalBookContainer">
-            <!-- Top bar -->
+            <!-- Slim Top Bar (Tabs + Page Badge + Zoom + Close) -->
             <div class="modal-book-top-bar">
-                <div style="display: flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: var(--color-mimosa);">
-                    <i class="fas fa-book-open"></i>
-                    <span id="bookViewerTitle">Dim Sum Inc Signature</span>
+                <div class="modal-book-nav-tabs">
+                    <button class="btn-book-tab active" id="tabBook-signature" onclick="switchActiveBook('signature')">
+                        <i class="fas fa-star" style="color: var(--color-mimosa);"></i> DSI Signature
+                    </button>
+                    <button class="btn-book-tab" id="tabBook-bali" onclick="switchActiveBook('bali')">
+                        <i class="fas fa-umbrella-beach"></i> DSI Bali
+                    </button>
+                    <button class="btn-book-tab" id="tabBook-regular" onclick="switchActiveBook('regular')">
+                        <i class="fas fa-map-marker-alt"></i> Plaza Festival, Kemang & Karawaci
+                    </button>
                 </div>
 
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <!-- Dual View Switcher (PC Spread 2 Hal vs Mobile Single 1 Hal) -->
-                    <div class="view-mode-pill-bar">
-                        <button type="button" id="btnModePc" class="btn-mode-pill active" onclick="setViewMode('pc')">
-                            <i class="fas fa-desktop"></i>
-                            <span>PC View (2 Hal)</span>
-                        </button>
-                        <button type="button" id="btnModeMobile" class="btn-mode-pill" onclick="setViewMode('mobile')">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Mobile View (1 Hal)</span>
-                        </button>
-                    </div>
-
-                    <!-- Zoom Toggle Button -->
-                    <button type="button" class="btn-book-tool" id="btnToggleZoom" onclick="toggleBookZoom()" title="Perbesar Halaman (Klik gambar juga bisa)">
+                <div class="modal-book-top-actions">
+                    <span class="modal-book-page-pill"><span id="bookCurrentPage">1</span> / <span id="bookTotalPages">6</span></span>
+                    <button type="button" class="btn-book-tool" id="btnToggleZoom" onclick="toggleBookZoom()" title="Perbesar Halaman (Klik gambar)">
                         <i class="fas fa-search-plus"></i>
                         <span id="zoomText">Zoom</span>
                     </button>
-
-                    <!-- Fullscreen Toggle Button -->
                     <button type="button" class="btn-book-tool" id="btnToggleFs" onclick="toggleBookFullscreen()" title="Layar Penuh">
                         <i class="fas fa-expand"></i>
                     </button>
-
-                    <!-- Close Button -->
-                    <button onclick="closeBookViewer()" style="background: rgba(255,255,255,0.08); border: 1px solid var(--border-dark); width: 34px; height: 34px; border-radius: 50%; color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;" title="Tutup">&times;</button>
-                </div>
-            </div>
-
-            <!-- 3 Tabs (DSI Signature, DSI Bali, Plaza Festival) -->
-            <div class="modal-book-nav-tabs">
-                <button class="btn-book-tab active" id="tabBook-signature" onclick="switchActiveBook('signature')">
-                    <i class="fas fa-star" style="color: var(--color-mimosa);"></i> DSI Signature
-                </button>
-                <button class="btn-book-tab" id="tabBook-bali" onclick="switchActiveBook('bali')">
-                    <i class="fas fa-umbrella-beach"></i> DSI Bali
-                </button>
-                <button class="btn-book-tab" id="tabBook-regular" onclick="switchActiveBook('regular')">
-                    <i class="fas fa-map-marker-alt"></i> Plaza Festival, Kemang & Karawaci
-                </button>
-            </div>
-
-            <!-- Viewer Header & Counter Row -->
-            <div class="modal-book-info-row">
-                <div>
-                    <h4 id="bookHeadline" style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #ffffff; letter-spacing: 0.05em; margin-bottom: 2px;">DIM SUM INC MENU</h4>
-                    <p id="bookSubtitle" style="font-size: 0.76rem; color: #a19da7;">Buku Menu Dim Sum Inc Signature</p>
-                </div>
-                <div style="background: #ffffff; color: #0c0b0d; padding: 4px 14px; border-radius: var(--radius-pill); font-size: 0.85rem; font-weight: 800; white-space: nowrap;">
-                    <span id="bookCurrentPage">1</span> <span id="bookTotalPages">/ 6</span>
+                    <button type="button" class="btn-modal-close-round" onclick="closeBookViewer()" title="Tutup">&times;</button>
                 </div>
             </div>
 
             <!-- HUGE VIEWPORT - ULTRA CRISP READABILITY (Click to Zoom) -->
             <div class="book-slide-viewport spine-center" id="bookSlideViewport" onclick="toggleBookZoom()" title="Klik untuk memperbesar / memperkecil tulisan">
                 <div class="book-slide-stage">
-                    <img id="bookActiveImg" src="menu_dsi_signature_spread/spread_01.jpg" alt="Menu Lembar 1" class="book-slide-img">
+                    <img id="bookActiveImg" src="menu_dsi_signature_spread/spread_01.jpg" alt="Menu Dim Sum Inc" class="book-slide-img">
                 </div>
             </div>
 
@@ -3338,7 +3311,7 @@
 
                 <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
                     <input type="range" id="bookRangeSlider" min="1" max="6" value="1" oninput="jumpBookSlide(this.value)" class="book-range-slider">
-                    <div id="bookPageIndicator" style="font-size: 0.74rem; color: #a19da7; font-weight: 600;">Lembar 1 dari 6 (2 Halaman Cetak)</div>
+                    <div id="bookPageIndicator" style="font-size: 0.74rem; color: #a19da7; font-weight: 600;">Lembar 1 dari 6</div>
                 </div>
 
                 <button type="button" class="btn-book-nav" id="btnBookNext" onclick="nextBookSlide()">
@@ -3347,8 +3320,6 @@
                 </button>
             </div>
         </div>
-    </div>
-    </div>
     </div>
 
     <!-- Floating WhatsApp Hotline Button -->
@@ -3435,7 +3406,7 @@
             }
         }
 
-        // Switch View Mode: 'pc' (2 Hal / Spread) vs 'mobile' (1 Hal)
+        // Switch View Mode: 'pc' (2 Hal / Spread) vs 'mobile' (1 Hal) - Auto detected based on device screen
         function setViewMode(mode) {
             if (mode !== 'pc' && mode !== 'mobile') return;
             currentViewMode = mode;
@@ -3460,28 +3431,21 @@
                 }
             }
 
-            const btnPc = document.getElementById('btnModePc');
-            const btnMobile = document.getElementById('btnModeMobile');
-            if (btnPc && btnMobile) {
-                if (mode === 'pc') {
-                    btnPc.classList.add('active');
-                    btnMobile.classList.remove('active');
-                } else {
-                    btnMobile.classList.add('active');
-                    btnPc.classList.remove('active');
-                }
-            }
-
             // Adjust page number smoothly
             const book = allBooks[currentActiveBookKey];
-            const cfg = book[mode];
-            if (mode === 'pc') {
-                currentActivePageNum = Math.min(cfg.totalPages, Math.max(1, Math.ceil(currentActivePageNum / 2)));
-            } else {
-                currentActivePageNum = Math.min(cfg.totalPages, Math.max(1, (currentActivePageNum - 1) * 2 + 1));
+            if (book) {
+                const cfg = book[mode];
+                if (mode === 'pc') {
+                    currentActivePageNum = Math.min(cfg.totalPages, Math.max(1, Math.ceil(currentActivePageNum / 2)));
+                } else {
+                    currentActivePageNum = Math.min(cfg.totalPages, Math.max(1, (currentActivePageNum - 1) * 2 + 1));
+                }
+                renderBookPage(currentActivePageNum);
             }
+        }
 
-            renderBookPage(currentActivePageNum);
+        function detectAutoViewMode() {
+            return window.innerWidth > 768 ? 'pc' : 'mobile';
         }
 
         function openBookViewer(bookKey = 'signature', page = 1) {
@@ -3490,8 +3454,8 @@
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
                 
-                // Auto sync view mode based on screen size on open
-                const autoMode = window.innerWidth <= 768 ? 'mobile' : 'pc';
+                // Automatic device detection: PC (> 768px) -> Spread (2 Hal), Mobile (<= 768px) -> Single (1 Hal)
+                const autoMode = detectAutoViewMode();
                 setViewMode(autoMode);
                 switchActiveBook(bookKey, page);
             }
@@ -3529,7 +3493,7 @@
             if (subEl) subEl.textContent = book.subtitle;
 
             const totalEl = document.getElementById('bookTotalPages');
-            if (totalEl) totalEl.textContent = `/ ${cfg.totalPages}`;
+            if (totalEl) totalEl.textContent = cfg.totalPages;
 
             const slider = document.getElementById('bookRangeSlider');
             if (slider) slider.max = cfg.totalPages;
@@ -3619,7 +3583,7 @@
             if (currEl) currEl.textContent = pageNum;
 
             const totalEl = document.getElementById('bookTotalPages');
-            if (totalEl) totalEl.textContent = `/ ${cfg.totalPages}`;
+            if (totalEl) totalEl.textContent = cfg.totalPages;
 
             const indicatorEl = document.getElementById('bookPageIndicator');
             if (indicatorEl) {
@@ -3739,19 +3703,57 @@
             if (e.target === modal) closeBookViewer();
         });
 
-        // Window resize auto sync mode if not manually changed
+        // Window resize auto sync mode
         window.addEventListener('resize', () => {
             const modal = document.getElementById('bookViewerBackdrop');
             if (modal && modal.classList.contains('active')) {
-                // Keep smooth view mode
+                const autoMode = detectAutoViewMode();
+                if (autoMode !== currentViewMode) {
+                    setViewMode(autoMode);
+                    switchActiveBook(currentActiveBookKey, 1);
+                }
             }
         });
 
         // Mobile Nav Drawer Toggle
-        function toggleMobileMenu() {
-            const drawer = document.getElementById('mobileNavDrawer');
-            if (drawer) drawer.classList.toggle('active');
+        function toggleMobileMenu(e) {
+            if (e && e.stopPropagation) e.stopPropagation();
+            const drawer = document.getElementById('mobileDrawer');
+            const toggleBtn = document.getElementById('mobileToggle');
+            if (!drawer) return;
+            const isOpen = drawer.classList.toggle('open');
+            if (toggleBtn) {
+                const icon = toggleBtn.querySelector('i');
+                if (icon) {
+                    icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+                    icon.style.color = isOpen ? 'var(--color-mimosa)' : '#ffffff';
+                }
+            }
         }
+
+        function closeMobileMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const toggleBtn = document.getElementById('mobileToggle');
+            if (drawer) drawer.classList.remove('open');
+            if (toggleBtn) {
+                const icon = toggleBtn.querySelector('i');
+                if (icon) {
+                    icon.className = 'fas fa-bars';
+                    icon.style.color = '#ffffff';
+                }
+            }
+        }
+
+        // Close mobile drawer when clicking outside
+        document.addEventListener('click', function(e) {
+            const drawer = document.getElementById('mobileDrawer');
+            const toggleBtn = document.getElementById('mobileToggle');
+            if (drawer && drawer.classList.contains('open')) {
+                if (!drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    closeMobileMenu();
+                }
+            }
+        });
 
         // Reservation Form Submission to WhatsApp
         function submitReservation(e) {
@@ -3911,6 +3913,7 @@
     </script>
 </body>
 </html>
+
 
 
 
