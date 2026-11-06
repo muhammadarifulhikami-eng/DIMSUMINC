@@ -9,8 +9,8 @@
     <link rel="apple-touch-icon" href="favicon.png">
     
     <!-- Meta SEO -->
-    <meta name="description" content="Dim Sum Inc. â€” Handcrafted Dim Sum autentik sejak 2011. Halal, fresh setiap hari, dan buka 24 jam di 5 outlet Jakarta, Karawaci, dan Bali.">
-    <meta name="keywords" content="Dim Sum Inc, Dimsum 24 Jam, Dimsum Jakarta, Dimsum Bali, Dimsum Halal, Dimsum Kemang, Dimsum Plaza Festival">
+    <meta name="description" content="Dim Sum Inc. - Handcrafted Artisan Dim Sum autentik sejak 2011. 100% No Pork, No Lard, fresh daily, melayani 24 jam.">
+    <meta name="keywords" content="Dim Sum Inc, Dimsum 24 Jam, Dimsum Jakarta, Dimsum Bali, No Pork No Lard, Handcrafted Dim Sum">
     <meta name="author" content="Dimsum Inc">
 
     <!-- Fonts: Plus Jakarta Sans, Playfair Display & Cinzel -->
@@ -1816,6 +1816,7 @@
             letter-spacing: 0.12em;
             font-weight: 600;
         }
+                /* Brand Photos Grid (6 Balanced Cards) */
         .brand-photos-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1825,24 +1826,133 @@
             position: relative;
             border-radius: var(--radius-sm);
             overflow: hidden;
-            background: var(--color-dark-card);
-            border: 1px solid var(--border-dark);
-            height: 260px;
-            transition: var(--transition);
+            aspect-ratio: 4 / 3;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #000;
         }
-        .brand-photo-card.card-wide {
-            grid-column: span 2;
+        .brand-photo-card:hover {
+            border-color: var(--color-mimosa);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.6);
         }
         .brand-photo-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
-            filter: brightness(0.85);
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: block;
         }
         .brand-photo-card:hover img {
-            transform: scale(1.06);
-            filter: brightness(1.02);
+            transform: scale(1.08);
+        }
+        .brand-photo-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.05) 30%, rgba(12,11,13,0.92) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 18px 20px;
+            pointer-events: none;
+        }
+        .brand-badge-pill {
+            display: inline-block;
+            align-self: flex-start;
+            background: var(--color-mimosa);
+            color: #0c0b0d;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .brand-photo-overlay h4 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            color: var(--color-ivory);
+            margin-bottom: 4px;
+            letter-spacing: 0.02em;
+        }
+        .brand-photo-overlay p {
+            font-size: 0.78rem;
+            color: rgba(251, 249, 241, 0.75);
+            line-height: 1.4;
+            margin: 0;
+        }
+        @media (max-width: 992px) {
+            .brand-photos-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+        }
+        @media (max-width: 600px) {
+            .brand-photos-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+        }
+
+        /* Brand Photo Lightbox Modal */
+        .brand-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(12, 11, 13, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            z-index: 3600;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .brand-modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .brand-modal-container {
+            background: #141316;
+            border: 1px solid rgba(229, 168, 59, 0.35);
+            border-radius: 18px;
+            max-width: 720px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 50px rgba(229, 168, 59, 0.15);
+            animation: dishPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .brand-modal-media {
+            width: 100%;
+            max-height: 480px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+        .brand-modal-media img {
+            width: 100%;
+            height: 100%;
+            max-height: 480px;
+            object-fit: cover;
+            display: block;
+        }
+        .brand-modal-body {
+            padding: 22px 26px 26px;
+        }
+        .brand-modal-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-ivory);
+            margin-bottom: 8px;
+        }
+        .brand-modal-desc {
+            font-size: 0.92rem;
+            color: rgba(251, 249, 241, 0.78);
+            line-height: 1.55;
+            margin: 0;
         }
         .brand-photo-overlay {
             position: absolute;
@@ -1949,7 +2059,7 @@
                 <img src="logo_open_24h_cropped.png" alt="Dim Sum Inc. Open 24 Hours Logo" class="nav-brand-logo-img">
                 <div>
                     <div class="nav-brand-text">DIM SUM INC.</div>
-                    <div class="nav-brand-sub">Open 24 Hours Ã¢â‚¬Â¢ Est. 2011</div>
+                    <div class="nav-brand-sub">Open 24 Hours &bull; Est. 2011</div>
                 </div>
             </a>
 
@@ -1992,16 +2102,13 @@
         <div class="container">
             <div class="hero-grid">
                 <!-- Left Vertical Calligraphy Seal Stamp (Photo 4) -->
-                <div class="hero-vertical-seal">
-                    <div class="seal-kanji">é»žå¿ƒä¼šç¤¾</div>
-                    <div class="seal-stamp-box">24H</div>
-                </div>
+                
 
                 <!-- Center Main Headline -->
                 <div class="hero-content-col">
                     <div class="hero-pre-tag">
                         <i class="fas fa-circle" style="font-size: 6px; color: var(--color-mimosa);"></i>
-                        CHINESE HERITAGE â€¢ SINCE 2011
+                        CHINESE HERITAGE &bull; SINCE 2011
                     </div>
 
                     <h1 class="hero-headline">
@@ -2010,7 +2117,7 @@
                     </h1>
 
                     <p class="hero-description">
-                        Menghadirkan seni dim sum oriental autentik buatan tangan segar setiap hari. Dibuat dari bahan-bahan halal berkualitas prima dan siap memanjakan lidah Anda 24 jam setiap hari.
+                        Menghadirkan seni dim sum oriental autentik buatan tangan segar setiap hari. Dibuat dari bahan-bahan berkualitas prima 100% No Pork, No Lard dan siap memanjakan lidah Anda 24 jam setiap hari.
                     </p>
 
                     <div class="hero-btn-row">
@@ -2061,7 +2168,6 @@
                         </p>
                     </div>
                     <div>
-                        <div class="tasting-card-page-count">12 Halaman</div>
                         <button class="btn btn-black" style="width: 100%;">View Menu</button>
                     </div>
                 </div>
@@ -2074,11 +2180,10 @@
                         </div>
                         <h4 class="tasting-card-title">DSI Bali</h4>
                         <p class="tasting-card-desc">
-                            Menu khas pulau dewata: Fried Dimsum, Beers, Tropical Organic Juice, Coolers Mocktails, Set Porridge, dan hidangan oriental & lokal.
+                            Menu resmi Dim Sum Inc outlet Bali: Pilihan Fried & Steamed Dim Sum otentik, Beers, Tropical Organic Juice, Coolers Mocktails, Set Porridge, dan aneka hidangan favorit.
                         </p>
                     </div>
                     <div>
-                        <div class="tasting-card-page-count">8 Halaman</div>
                         <button class="btn btn-black" style="width: 100%;">View Menu</button>
                     </div>
                 </div>
@@ -2095,7 +2200,6 @@
                         </p>
                     </div>
                     <div>
-                        <div class="tasting-card-page-count">8 Halaman</div>
                         <button class="btn btn-black" style="width: 100%;">View Menu</button>
                     </div>
                 </div>
@@ -2117,7 +2221,7 @@
                         Di Dim Sum Inc, kami percaya dim sum bukan sekadar makanan instan, melainkan dedikasi kuliner. Setiap butir pangsit, kulit har gau kristal, dan pao lembut dibentuk secara individual dengan tangan terampil setiap pagi.
                     </p>
                     <p class="artisan-desc">
-                        Bahan-bahan segar bermutu tinggi, 100% halal tanpa minyak babi (No Pork, No Lard), serta siap dinikmati kapan saja â€” pagi, siang, sore, hingga tengah malam.
+                        Bahan-bahan segar bermutu tinggi, 100% No Pork, No Lard tanpa minyak babi, serta siap dinikmati kapan saja - pagi, siang, sore, hingga tengah malam.
                     </p>
                     <a href="#outlets" class="btn btn-terracotta">Kunjungi Outlet</a>
                 </div>
@@ -2125,11 +2229,7 @@
                 <!-- Image Col -->
                 <div class="artisan-img-col"><img src="brand_photos/chef_fire_wok.jpg" alt="Chef Wok Hei Flame Craftsmanship Dim Sum Inc"></div>
 
-                <!-- Calligraphy Seal Col -->
-                <div class="artisan-seal-col">
-                    <div class="artisan-kanji">æ‰‹å·¥é»žå¿ƒ</div>
-                    <div class="seal-stamp-box">æ­£çµ±</div>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -2149,45 +2249,63 @@
 
             <!-- Authentic Photo 5 Brand Grid -->
             <div class="brand-photos-grid">
-                <div class="brand-photo-card card-wide">
-                    <img src="brand_photos/storefront_24h_window.jpg" alt="Open 24 Hours Storefront Window Dim Sum Inc">
+                <!-- Card 1: Storefront Window -->
+                <div class="brand-photo-card" onclick="openBrandModal(this)">
+                    <img src="brand_photos/storefront_24h_window.jpg" alt="Storefront Sign Dim Sum Inc Open 24 Hours">
                     <div class="brand-photo-overlay">
                         <span class="brand-badge-pill">Open 24 Hours</span>
-                        <h4>Dim Sum & Beer Co. &bull; Est. 2011</h4>
-                        <p>A trademark brand melayani pencinta dim sum otentik 24 jam non-stop.</p>
+                        <h4>Storefront Sign &bull; Est. 2011</h4>
+                        <p>Signboard jendela kaca trademark brand resmi Dim Sum Inc yang melayani 24 jam non-stop.</p>
                     </div>
                 </div>
 
-                <div class="brand-photo-card">
-                    <img src="brand_photos/bao_hands.jpg" alt="Fresh Handcrafted Steamed Bao">
+                <!-- Card 2: Steamed Siomay with Chopsticks -->
+                <div class="brand-photo-card" onclick="openBrandModal(this)">
+                    <img src="brand_photos/steamed_siomay_steamer.jpg" alt="Handcrafted Fresh Steamed Dim Sum">
                     <div class="brand-photo-overlay">
-                        <h4>Handcrafted Steamed Bao</h4>
-                        <p>Tekstur lembut dengan isian daging ayam & udang gurih istimewa.</p>
+                        <span class="brand-badge-pill">Artisan Dim Sum</span>
+                        <h4>Handcrafted Fresh Dim Sum</h4>
+                        <p>Dim sum siomay kukus hangat buatan tangan dengan isian daging ayam & udang gurih istimewa.</p>
                     </div>
                 </div>
 
-                <div class="brand-photo-card">
-                    <img src="brand_photos/beer_cheers.jpg" alt="Dim Sum & Beer Cheers">
+                <!-- Card 3: Cheers with Beer -->
+                <div class="brand-photo-card" onclick="openBrandModal(this)">
+                    <img src="brand_photos/beer_cheers.jpg" alt="Best Enjoyed Loud Dim Sum and Beer Cheers">
                     <div class="brand-photo-overlay">
+                        <span class="brand-badge-pill">Bar & Drinks</span>
                         <h4>Best Enjoyed Loud</h4>
-                        <p>Perpaduan sempurna dim sum hangat dan bir segar bersama teman.</p>
+                        <p>Momen toast bir segar bersama sahabat untuk menemani aneka sajian dim sum hangat.</p>
                     </div>
                 </div>
 
-                <div class="brand-photo-card">
-                    <img src="brand_photos/steamed_skewers_table.jpg" alt="Steamed Dim Sum Platter Feast">
+                <!-- Card 4: Oriental Comfort Feast -->
+                <div class="brand-photo-card" onclick="openBrandModal(this)">
+                    <img src="brand_photos/steamed_skewers_table.jpg" alt="Oriental Comfort Feast Dim Sum Inc">
                     <div class="brand-photo-overlay">
+                        <span class="brand-badge-pill">Signature Platter</span>
                         <h4>Oriental Comfort Feast</h4>
-                        <p>Pilihan kukusan, sate oriental, dan pao hangat di meja kayu khas.</p>
+                        <p>Pilihan sate oriental, aneka pao lembut, hakau, dan kukusan lezat di atas meja kayu khas.</p>
                     </div>
                 </div>
 
-                <div class="brand-photo-card card-wide">
-                    <img src="brand_photos/restaurant_patio.jpg" alt="Modern Brick & Patio Atmosphere">
+                <!-- Card 5: Patio Friends Hangout -->
+                <div class="brand-photo-card" onclick="openBrandModal(this)">
+                    <img src="brand_photos/patio_friends_hangout.jpg" alt="Community Hangout and Outdoor Dining Dim Sum Inc">
+                    <div class="brand-photo-overlay">
+                        <span class="brand-badge-pill">Outdoor Terrace</span>
+                        <h4>Community Hangout & Dining</h4>
+                        <p>Keseruan bersantap dan berkumpul bersama teman di area outdoor bernuansa bata ekspos klasik.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Industrial Vintage Dining -->
+                <div class="brand-photo-card" onclick="openBrandModal(this)">
+                    <img src="brand_photos/restaurant_vintage_interior.jpg" alt="Industrial Vintage Dining Atmosphere Dim Sum Inc">
                     <div class="brand-photo-overlay">
                         <span class="brand-badge-pill">Modern Ambience</span>
                         <h4>Industrial Vintage Dining</h4>
-                        <p>Suasana santai nan berkelas dengan sentuhan bata ekspos, kayu, dan besi industrial.</p>
+                        <p>Nuansa New Yorker berkelas dengan dinding bata ekspos, kayu, dan pencahayaan hangat.</p>
                     </div>
                 </div>
             </div>
@@ -2199,11 +2317,11 @@
     ======================================================== -->
     <section class="section-quote">
         <div class="container">
-            <div class="quote-icon">â€œ</div>
+            <div class="quote-icon">&ldquo;</div>
             <p class="quote-text">
                 An extraordinary dim sum experience from morning to midnight. The perfect harmony of steam, crispness, and oriental hospitality.
             </p>
-            <div class="quote-author">â€” DIM SUM INC. TRADEMARK BRAND EST. 2011 â€”</div>
+            <div class="quote-author">&mdash; DIM SUM INC. TRADEMARK BRAND EST. 2011 &mdash;</div>
         </div>
     </section>
 
@@ -2237,7 +2355,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Fried Shiu May</h4>
                         <p class="dish-desc">Pan-fried prawn &amp; chicken shiu may</p>
@@ -2255,7 +2373,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Crispy Prawn Ball</h4>
                         <p class="dish-desc">Thin sliced deep fried wonton skin with prawn filling</p>
@@ -2273,7 +2391,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Fried Durian Spring Roll</h4>
                         <p class="dish-desc">Durian paste melted in deep fried crispy batter</p>
@@ -2291,7 +2409,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Fried Mantao</h4>
                         <p class="dish-desc">Deep fried round chinese bun served with condensed milk</p>
@@ -2309,7 +2427,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Fried Dao Sa Pao</h4>
                         <p class="dish-desc">Deep fried pluffy steamed bun filled with red bean paste</p>
@@ -2327,7 +2445,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Ngohiong</h4>
                         <p class="dish-desc">Fried spring roll filled with seasoned chicken and vegetables crispy on the outside and savory inside</p>
@@ -2345,7 +2463,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Thin Crust Daosa</h4>
                         <p class="dish-desc">Thin-crispy fried batter filled with red bean paste, topped with aromatic sesame seed</p>
@@ -2363,7 +2481,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Fried Guo Tie</h4>
                         <p class="dish-desc">Pan fried dumpling made with shrimp, chicken &amp; vegetable filling</p>
@@ -2381,7 +2499,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Mayo Prawn Dumpling</h4>
                         <p class="dish-desc">Fried prawn wonton served with mayonaise</p>
@@ -2399,7 +2517,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Crispy Prawn with cream mala sauce</h4>
                         <p class="dish-desc">Thin sliced deep fried wonton skin with prawn filling served with special cream mala sauce</p>
@@ -2417,7 +2535,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Spring Roll</h4>
                         <p class="dish-desc">Fried prawn &amp; chicken spring roll wrapped with popiah skin</p>
@@ -2435,7 +2553,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Mozzarella Spring Roll</h4>
                         <p class="dish-desc">Spring roll with prawn and mozarella cheese filling</p>
@@ -2453,7 +2571,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Mushroom &amp; Mozzarella Spring Roll</h4>
                         <p class="dish-desc">Fried spring roll filled with chopped mushroom &amp; melted mozzarella</p>
@@ -2471,7 +2589,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Beancurd Skin Spring Roll</h4>
                         <p class="dish-desc">Beancurd skin spring roll with prawn and chicken filling</p>
@@ -2489,7 +2607,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Shredded prawn cakwe</h4>
                         <p class="dish-desc">Fried dough fritter with prawn filling topped with chicken floss</p>
@@ -2507,7 +2625,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Shiu May</h4>
                         <p class="dish-desc">Minced chicken and prawn dumpling wrapped in thin wheat flour wraper</p>
@@ -2525,7 +2643,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Ceong Fan Chicken</h4>
                         <p class="dish-desc">Steamed wide rice flour roll with chicken char siu filling and topped with special soy sauce</p>
@@ -2543,7 +2661,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Lo Mai Gai</h4>
                         <p class="dish-desc">Steamed glutinous rice with chicken filling in dried lotus leaf wrap</p>
@@ -2561,7 +2679,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Pai Kut</h4>
                         <p class="dish-desc">Steamed beef spare ribs in fermented black bean sauce</p>
@@ -2579,7 +2697,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Dumpling in black Vinegar Sauce</h4>
                         <p class="dish-desc">Chicken and vegetables dumpling served in tangy &amp; spicy broth</p>
@@ -2597,7 +2715,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Dumpling in Agedashi Sauce</h4>
                         <p class="dish-desc">Minced chicken, shrimp, and vegetables wrapped in gyoza skin served with Japanese style agedashi</p>
@@ -2615,7 +2733,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Creamy Spinach Prawn Dumpling</h4>
                         <p class="dish-desc">Steamed dumpling filled with prawn, spinach and cream</p>
@@ -2633,7 +2751,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Oyster Sauce Spring Roll</h4>
                         <p class="dish-desc">Chicken &amp; shrimp wrapped in bean curd skin, served with oyster sauce</p>
@@ -2651,7 +2769,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Choipan</h4>
                         <p class="dish-desc">Thin rice flour skin filled with yam and ebi shrimp</p>
@@ -2669,7 +2787,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Char Siu Pao</h4>
                         <p class="dish-desc">Chinese steamed bun with barbeque chicken filling</p>
@@ -2687,7 +2805,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Salted Egg Pao</h4>
                         <p class="dish-desc">Steamed black bun with tasty salted egg custard filling</p>
@@ -2705,7 +2823,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Shiu May Mozzarella</h4>
                         <p class="dish-desc">Steamed shiu may with torched mozzarella topping</p>
@@ -2723,7 +2841,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Dao Sa Pao</h4>
                         <p class="dish-desc">Fluffy steamed bun filled with red bean paste</p>
@@ -2741,7 +2859,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Chicken Curry Pao</h4>
                         <p class="dish-desc">Pan-seared steamed bun filled with tasty chicken curry</p>
@@ -2759,7 +2877,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Steamed Mantao</h4>
                         <p class="dish-desc">Fluffy steamed bun served with condensed milk</p>
@@ -2777,7 +2895,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Har Gau</h4>
                         <p class="dish-desc">Thin and translucent dumpling filled with perfectly cooked shrimp</p>
@@ -2795,7 +2913,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Xiao Long Bao Chicken</h4>
                         <p class="dish-desc">Delicate steamed dumpling filled with chicken meat</p>
@@ -2813,7 +2931,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Xiao Long Bao Chocolate</h4>
                         <p class="dish-desc">Delicate steamed dumpling filled with chocolate</p>
@@ -2831,7 +2949,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Steamed Guo Tie</h4>
                         <p class="dish-desc">Steamed dumpling filled with mixed shrimp, chicken and vegetables</p>
@@ -2849,7 +2967,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Chicken Feet</h4>
                         <p class="dish-desc">Steamed tender chicken feet simmered and flavoured in black fermented bean sauce</p>
@@ -2867,7 +2985,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Coriander &amp; Mushroom Prawn Dumpling</h4>
                         <p class="dish-desc">Steamed dumpling filled with prawn, mushroom and coriander</p>
@@ -2885,7 +3003,7 @@
                     </div>
                     <div class="dish-info">
                         <div class="dish-meta">
-                            <span class="dish-halal-dot"></span> Halal Certified
+                            <span class="dish-halal-dot"></span> 100% No Pork, No Lard
                         </div>
                         <h4 class="dish-name">Ceong Fan Shrimp</h4>
                         <p class="dish-desc">Steamed wide rice flour roll with shrimp char siu filling and topped with special soy sauce</p>
@@ -3125,7 +3243,7 @@
                         <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.3rem;"></i> +62 811-1289-940
                     </a>
                     <p style="font-size: 0.82rem; color: #8c8993; line-height: 1.6;">
-                        100% Halal Certified (No Pork, No Lard). Member of Inara Group.
+                        100% No Pork, No Lard. Member of Inara Group.
                     </p>
                 </div>
             </div>
@@ -3654,6 +3772,24 @@
     <!-- ========================================================
          DISH PHOTO PREVIEW MODAL
     ======================================================== -->
+    
+    <!-- ========================================================
+         BRAND PHOTO LIGHTBOX MODAL
+    ======================================================== -->
+    <div id="brandPhotoModal" class="brand-modal-overlay" onclick="closeBrandModal(event)">
+        <div class="brand-modal-container" onclick="event.stopPropagation()">
+            <button class="dish-modal-close" onclick="closeBrandModal()" title="Tutup Foto">&times;</button>
+            <div class="brand-modal-media">
+                <img id="brandModalImg" src="" alt="Brand Photo">
+            </div>
+            <div class="brand-modal-body">
+                <span id="brandModalBadge" class="brand-badge-pill" style="margin-bottom: 10px;">Brand Identity</span>
+                <h3 id="brandModalTitle" class="brand-modal-title">Judul Foto</h3>
+                <p id="brandModalDesc" class="brand-modal-desc">Deskripsi foto suasana Dim Sum Inc.</p>
+            </div>
+        </div>
+    </div>
+
     <div id="dishPreviewModal" class="dish-modal-overlay" onclick="closeDishModal(event)">
         <div class="dish-modal-container" onclick="event.stopPropagation()">
             <button class="dish-modal-close" onclick="closeDishModal()" title="Tutup Foto">&times;</button>
@@ -3663,7 +3799,7 @@
             </div>
             <div class="dish-modal-body">
                 <div class="dish-modal-meta">
-                    <span class="dish-halal-dot"></span> Halal Certified &bull; Handcrafted Daily
+                    <span class="dish-halal-dot"></span> 100% No Pork, No Lard &bull; Handcrafted Daily
                 </div>
                 <h3 id="dishModalTitle" class="dish-modal-title">Nama Menu</h3>
                 <p id="dishModalDesc" class="dish-modal-desc">Deskripsi menu lezat Dim Sum Inc.</p>
@@ -3676,6 +3812,49 @@
     </div>
 
     <script>
+
+        
+        /* Brand Photo Modal Lightbox */
+        function openBrandModal(cardEl) {
+            if (!cardEl) return;
+            const img = cardEl.querySelector('img');
+            const title = cardEl.querySelector('h4');
+            const desc = cardEl.querySelector('p');
+            const badge = cardEl.querySelector('.brand-badge-pill');
+
+            const modalImg = document.getElementById('brandModalImg');
+            const modalTitle = document.getElementById('brandModalTitle');
+            const modalDesc = document.getElementById('brandModalDesc');
+            const modalBadge = document.getElementById('brandModalBadge');
+
+            if (modalImg) {
+                modalImg.src = img ? img.src : '';
+                modalImg.alt = title ? title.innerText : 'Brand Photo';
+            }
+            if (modalTitle) modalTitle.innerText = title ? title.innerText : '';
+            if (modalDesc) modalDesc.innerText = desc ? desc.innerText : '';
+            if (modalBadge) {
+                modalBadge.innerText = badge ? badge.innerText : 'Brand Identity';
+                modalBadge.style.display = badge ? 'inline-block' : 'none';
+            }
+
+            const modal = document.getElementById('brandPhotoModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeBrandModal(e) {
+            if (e && e.target && e.target.closest && e.target.closest('.brand-modal-container') && !e.target.classList.contains('dish-modal-close')) {
+                return;
+            }
+            const modal = document.getElementById('brandPhotoModal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+            document.body.style.overflow = '';
+        }
 
         /* Dish Photo Preview Modal */
         function openDishModal(cardEl) {
@@ -3730,6 +3909,7 @@
     </script>
 </body>
 </html>
+
 
 
 
