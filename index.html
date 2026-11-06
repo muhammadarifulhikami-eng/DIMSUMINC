@@ -1170,16 +1170,26 @@
             width: 100%;
             padding: 12px 14px;
             border: 1px solid rgba(74, 46, 27, 0.2);
-            border-radius: 4px;
+            border-radius: 6px;
             font-family: var(--font-body);
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             color: #222;
             outline: none;
             background: #faf8f3;
+            box-sizing: border-box;
+            transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
         }
         .form-ctrl:focus {
             border-color: var(--color-terracotta);
             background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(168, 56, 36, 0.12);
+        }
+        input[type="date"].form-ctrl, input[type="time"].form-ctrl {
+            cursor: pointer;
+            color: #111;
+            font-weight: 600;
+            background-color: #faf8f3;
+            min-height: 46px;
         }
 
         /* ========================================================
@@ -2058,6 +2068,15 @@
             .hero-headline span { font-size: 2rem; }
             .quote-text { font-size: 1.3rem; }
             .form-row-2 { grid-template-columns: 1fr; }
+            .section-reservations {
+                padding-bottom: 110px !important;
+            }
+            .floating-wa-btn {
+                bottom: 18px !important;
+                right: 18px !important;
+                padding: 10px 16px !important;
+                font-size: 0.8rem !important;
+            }
         }
     </style>
 </head>
@@ -3182,28 +3201,54 @@
 
                 <!-- Form Column -->
                 <div>
-                    <form class="res-form-card" onsubmit="handleReservationSubmit(event)">
-                        <h4 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-wood);">Kirim Pesan Reservasi</h4>
+                    <form class="res-form-card" id="reservationForm" onsubmit="handleReservationSubmit(event)">
+                        <h4 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-wood); margin-bottom: 4px;">Kirim Pesan Reservasi</h4>
                         
-                        <input type="text" id="resName" class="form-ctrl" placeholder="Nama Lengkap Anda" required>
+                        <div>
+                            <label for="resName" style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--color-wood); margin-bottom: 4px;">Nama Lengkap</label>
+                            <input type="text" id="resName" class="form-ctrl" placeholder="Contoh: Refki" required>
+                        </div>
                         
-                        <div class="form-row-2">
-                            <select id="resOutlet" class="form-ctrl" required>
-                                <option value="Plaza Festival">Outlet Plaza Festival</option>
-                                <option value="Kemang Raya">Outlet Kemang Raya</option>
-                                <option value="Karawaci">Outlet Karawaci</option>
-                                <option value="Bali">Outlet Bali</option>
-                                <option value="Setiabudi">Outlet Setiabudi</option>
-                            </select>
-                            <input type="number" id="resPax" class="form-ctrl" min="1" placeholder="Jumlah Orang" required>
+                        <div>
+                            <label for="resPhone" style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--color-wood); margin-bottom: 4px;">Nomor WhatsApp</label>
+                            <input type="tel" id="resPhone" class="form-ctrl" placeholder="Contoh: 08123456789" required>
                         </div>
 
-                        <input type="text" id="resTime" class="form-ctrl" placeholder="Tanggal & Jam Kedatangan" required>
-                        
-                        <textarea id="resNotes" class="form-ctrl" rows="3" placeholder="Catatan Tambahan / Menu Pilihan..."></textarea>
+                        <div class="form-row-2">
+                            <div>
+                                <label for="resOutlet" style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--color-wood); margin-bottom: 4px;">Pilih Outlet</label>
+                                <select id="resOutlet" class="form-ctrl" required>
+                                    <option value="Outlet Plaza Festival">Outlet Plaza Festival (Jakarta)</option>
+                                    <option value="Outlet Kemang Raya">Outlet Kemang Raya (Jakarta)</option>
+                                    <option value="Outlet Karawaci">Outlet Karawaci (Tangerang)</option>
+                                    <option value="Outlet Bali">Outlet Bali (Legian, Bali)</option>
+                                    <option value="Outlet Setiabudi">Outlet Setiabudi (Jakarta)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="resPax" style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--color-wood); margin-bottom: 4px;">Jumlah Orang</label>
+                                <input type="number" id="resPax" class="form-ctrl" min="1" max="100" placeholder="Jumlah Orang" value="2" required>
+                            </div>
+                        </div>
 
-                        <button type="submit" class="btn btn-terracotta" style="width: 100%;">
-                            <i class="fab fa-whatsapp"></i> Kirim ke WhatsApp (+62 811-1289-940)
+                        <div class="form-row-2">
+                            <div>
+                                <label for="resDate" style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--color-wood); margin-bottom: 4px;"><i class="fas fa-calendar-alt" style="color: var(--color-mimosa);"></i> Tanggal Kedatangan</label>
+                                <input type="date" id="resDate" class="form-ctrl" required>
+                            </div>
+                            <div>
+                                <label for="resTime" style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--color-wood); margin-bottom: 4px;"><i class="fas fa-clock" style="color: var(--color-mimosa);"></i> Jam Kedatangan</label>
+                                <input type="time" id="resTime" class="form-ctrl" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="resNotes" style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--color-wood); margin-bottom: 4px;">Catatan Tambahan / Menu Pilihan</label>
+                            <textarea id="resNotes" class="form-ctrl" rows="3" placeholder="Misal: Meja area smoking / outdoor, menu yang ingin disiapkan lebih awal..."></textarea>
+                        </div>
+
+                        <button type="submit" id="btnSubmitRes" class="btn btn-terracotta" style="width: 100%; justify-content: center; font-size: 0.95rem; font-weight: 800; padding: 14px 18px; cursor: pointer; position: relative; z-index: 5; display: flex; align-items: center; gap: 8px;">
+                            <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Kirim Pesan Reservasi ke WhatsApp
                         </button>
                     </form>
                 </div>
@@ -3755,20 +3800,88 @@
             }
         });
 
-        // Reservation Form Submission to WhatsApp
-        function submitReservation(e) {
-            e.preventDefault();
-            const name = document.getElementById('resName').value;
-            const phone = document.getElementById('resPhone').value;
-            const outlet = document.getElementById('resOutlet').value;
-            const pax = document.getElementById('resPax').value;
-            const date = document.getElementById('resDate').value;
-            const time = document.getElementById('resTime').value;
-            const notes = document.getElementById('resNotes').value;
-
-            const text = `*RESERVASI MEJA DIM SUM INC*\n\nNama: ${name}\nNo. WhatsApp: ${phone}\nOutlet Pilihan: ${outlet}\nJumlah Orang: ${pax} Orang\nTanggal: ${date}\nJam: ${time}\nCatatan Khusus: ${notes || '-'}\n\nMohon konfirmasi ketersediaan meja. Terima kasih!`;
-            window.open(`https://wa.me/628111289940?text=${encodeURIComponent(text)}`, '_blank');
+        // Format Date to Indonesian format: YYYY-MM-DD -> DD MMMM YYYY
+        function formatIndonesianDate(dateStr) {
+            if (!dateStr) return '';
+            try {
+                const parts = dateStr.split('-');
+                if (parts.length === 3) {
+                    const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+                    const day = parseInt(parts[2], 10);
+                    const month = months[parseInt(parts[1], 10) - 1];
+                    const year = parts[0];
+                    return `${day < 10 ? '0' + day : day} ${month} ${year}`;
+                }
+            } catch (err) {}
+            return dateStr;
         }
+
+        // Set default date & time on page load
+        function initDefaultDateTime() {
+            const dateInput = document.getElementById('resDate');
+            const timeInput = document.getElementById('resTime');
+            if (dateInput && !dateInput.value) {
+                const today = new Date();
+                const yyyy = today.getFullYear();
+                const mm = String(today.getMonth() + 1).padStart(2, '0');
+                const dd = String(today.getDate()).padStart(2, '0');
+                dateInput.value = `${yyyy}-${mm}-${dd}`;
+            }
+            if (timeInput && !timeInput.value) {
+                timeInput.value = "19:00";
+            }
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initDefaultDateTime);
+        } else {
+            initDefaultDateTime();
+        }
+
+        // Reservation Form Submission to WhatsApp
+        function handleReservationSubmit(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            
+            const nameEl = document.getElementById('resName');
+            const phoneEl = document.getElementById('resPhone');
+            const outletEl = document.getElementById('resOutlet');
+            const paxEl = document.getElementById('resPax');
+            const dateEl = document.getElementById('resDate');
+            const timeEl = document.getElementById('resTime');
+            const notesEl = document.getElementById('resNotes');
+
+            const name = nameEl ? nameEl.value.trim() : '';
+            const phone = phoneEl ? phoneEl.value.trim() : '';
+            const outlet = outletEl ? outletEl.value.trim() : '';
+            const pax = paxEl ? paxEl.value.trim() : '2';
+            const rawDate = dateEl ? dateEl.value.trim() : '';
+            const time = timeEl ? timeEl.value.trim() : '';
+            const notes = notesEl ? notesEl.value.trim() : '';
+
+            const formattedDate = formatIndonesianDate(rawDate) || rawDate;
+
+            let text = `*RESERVASI MEJA DIM SUM INC*\n`;
+            text += `━━━━━━━━━━━━━━━━━━━━━\n`;
+            text += `👤 *Nama Pemesan*: ${name || '-'}\n`;
+            text += `📱 *No. WhatsApp*: ${phone || '-'}\n`;
+            text += `📍 *Outlet*: ${outlet || '-'}\n`;
+            text += `👥 *Jumlah Orang*: ${pax} Orang\n`;
+            text += `📅 *Tanggal*: ${formattedDate || '-'}\n`;
+            text += `⏰ *Jam*: ${time ? time + ' WIB' : '-'}\n`;
+            text += `📝 *Catatan / Menu*: ${notes || '-'}\n`;
+            text += `━━━━━━━━━━━━━━━━━━━━━\n`;
+            text += `Halo Customer Service Dim Sum Inc, mohon konfirmasi ketersediaan meja untuk reservasi kami. Terima kasih! 🙏`;
+
+            const waUrl = `https://wa.me/628111289940?text=${encodeURIComponent(text)}`;
+            
+            const win = window.open(waUrl, '_blank');
+            if (!win || win.closed || typeof win.closed === 'undefined') {
+                window.location.href = waUrl;
+            }
+            return false;
+        }
+
+        window.handleReservationSubmit = handleReservationSubmit;
+        window.submitReservation = handleReservationSubmit;
 
         console.log("Dim Sum Inc. Modern Luxury Web initialized with 37 dishes & dual-mode menu viewer!");
     </script>
