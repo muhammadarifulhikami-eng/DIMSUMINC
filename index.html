@@ -322,11 +322,15 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 80px 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: 1.15fr 440px;
+            gap: 48px;
             align-items: center;
             position: relative;
             z-index: 2;
+        }
+        .hero-content-col {
+            max-width: 640px;
+            width: 100%;
         }
         /* Left Vertical Seal Calligraphy Stamp (Photo 4) */
         .hero-vertical-seal {
@@ -536,11 +540,7 @@
             position: relative;
             overflow: hidden;
         }
-        .artisan-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 90px;
-            align-items: center;
-        }
+        .artisan-grid { grid-template-columns: 1fr; gap: 30px; }
         .artisan-text-col {
             padding: 70px 50px 70px 0;
             max-width: 500px;
@@ -2026,12 +2026,17 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero-headline { font-size: 3rem; }
-            .hero-grid { grid-template-columns: 1fr; }
-            .hero-vertical-seal { display: none; }
+            .hero-headline { font-size: 2.8rem; }
+            .hero-headline span { font-size: 2.4rem; }
+            .hero-grid { grid-template-columns: 1fr; gap: 36px; text-align: center; }
+            .hero-content-col { max-width: 100%; margin: 0 auto; }
+            .hero-pre-tag { justify-content: center; }
+            .hero-btn-row { justify-content: center; }
+            .hero-feature-photo { justify-content: center; }
+            .hero-dish-card { max-width: 440px; margin: 0 auto; }
             .tasting-cards-grid { grid-template-columns: 1fr; }
             .tasting-header-row { grid-template-columns: 1fr; }
-            .artisan-grid { grid-template-columns: 1fr; }
+            .artisan-grid { grid-template-columns: 1fr; gap: 30px; }
             .artisan-seal-col { display: none; }
             .reservation-grid { grid-template-columns: 1fr; }
             
@@ -2101,9 +2106,6 @@
     <section id="home" class="hero-banner">
         <div class="container">
             <div class="hero-grid">
-                <!-- Left Vertical Calligraphy Seal Stamp (Photo 4) -->
-                
-
                 <!-- Center Main Headline -->
                 <div class="hero-content-col">
                     <div class="hero-pre-tag">
@@ -3909,6 +3911,10 @@
     </script>
 </body>
 </html>
+
+
+
+
 
 
 
