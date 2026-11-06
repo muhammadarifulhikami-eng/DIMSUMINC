@@ -1,0 +1,3735 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dim Sum Inc. | Handcrafted Artisan Dim Sum â€” Open 24 Hours</title>
+        <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Dim Sum Inc. â€” Handcrafted Dim Sum autentik sejak 2011. Halal, fresh setiap hari, dan buka 24 jam di 5 outlet Jakarta, Karawaci, dan Bali.">
+    <meta name="keywords" content="Dim Sum Inc, Dimsum 24 Jam, Dimsum Jakarta, Dimsum Bali, Dimsum Halal, Dimsum Kemang, Dimsum Plaza Festival">
+    <meta name="author" content="Dimsum Inc">
+
+    <!-- Fonts: Plus Jakarta Sans, Playfair Display & Cinzel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ========================================================
+           BRAND IDENTITY SYSTEM (DIM SUM INC - PHOTO 4 & 5)
+           Jet Black, Ivory, Wood, Mimosa Gold, Terracotta, Deep Blue
+        ======================================================== */
+        :root {
+            --color-jet-black: #0c0b0d;
+            --color-dark-surface: #141316;
+            --color-dark-card: #18171b;
+            --color-ivory: #FBF9F1;
+            --color-ivory-dim: #EFECE1;
+            --color-wood: #4A2E1B;
+            --color-wood-light: #63432C;
+            --color-mimosa: #E5A83B;
+            --color-mimosa-glow: #F5B800;
+            --color-terracotta: #A83824;
+            --color-terracotta-hover: #BF412B;
+            --color-deep-blue: #162E38;
+            
+            --border-dark: rgba(255, 255, 255, 0.08);
+            --border-ivory: rgba(74, 46, 27, 0.15);
+            --border-gold: rgba(229, 168, 59, 0.35);
+            
+            --text-white: #ffffff;
+            --text-dark: #121014;
+            --text-muted: #96939b;
+            
+            --font-heading: 'Cinzel', 'Playfair Display', serif;
+            --font-serif-italic: 'Playfair Display', serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-pill: 9999px;
+            
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Resets */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            background-color: var(--color-jet-black);
+        }
+
+        body {
+            background-color: var(--color-jet-black);
+            color: var(--text-white);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+        }
+
+        /* Custom Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+        }
+
+        .btn-terracotta {
+            background: var(--color-terracotta);
+            color: #ffffff !important;
+        }
+        .btn-terracotta:hover {
+            background: var(--color-terracotta-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(168, 56, 36, 0.4);
+        }
+
+        .btn-black {
+            background: #000000;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-black:hover {
+            background: #1a1a1a;
+            border-color: var(--color-mimosa);
+            color: var(--color-mimosa) !important;
+            transform: translateY(-2px);
+        }
+
+        .btn-mimosa {
+            background: var(--color-mimosa);
+            color: #0c0b0d !important;
+            font-weight: 800;
+        }
+        .btn-mimosa:hover {
+            background: var(--color-mimosa-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(229, 168, 59, 0.35);
+        }
+
+        /* ========================================================
+           HEADER & NAVBAR (PHOTO 4 STYLE: CLEAN & REFINED)
+        ======================================================== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(12, 11, 13, 0.94);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-dark);
+            padding: 14px 0;
+            transition: var(--transition);
+        }
+        .site-header.scrolled {
+            padding: 10px 0;
+            background: rgba(10, 9, 11, 0.98);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        /* Open 24 Hours Logo Badge */
+        .open-24-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1.5px solid var(--color-mimosa);
+            background: #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 0 14px rgba(229, 168, 59, 0.25);
+            flex-shrink: 0;
+        }
+        .open-24-badge .t-open {
+            font-size: 0.52rem;
+            font-weight: 800;
+            color: var(--color-mimosa);
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+        .open-24-badge .t-24 {
+            font-size: 0.82rem;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1;
+            margin: 1px 0;
+        }
+        .open-24-badge .t-hours {
+            font-size: 0.48rem;
+            font-weight: 800;
+            color: var(--color-mimosa);
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+        .nav-brand-text {
+            font-family: var(--font-heading);
+            font-size: 1.28rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            color: #ffffff;
+            line-height: 1.1;
+        }
+        .nav-brand-sub {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            color: var(--color-mimosa);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-link {
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #d1cfd6;
+            transition: var(--transition);
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-mimosa);
+        }
+
+        .nav-right-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .nav-cta-btn {
+            padding: 10px 22px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+        }
+
+        .mobile-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        /* Mobile Drawer */
+        .mobile-drawer {
+            display: none;
+            position: fixed;
+            top: 74px;
+            left: 16px;
+            right: 16px;
+            background: #141316;
+            border: 1px solid var(--border-dark);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            z-index: 999;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
+        .mobile-drawer.open {
+            display: flex;
+        }
+        .mobile-drawer a {
+            padding: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* ========================================================
+           HERO SECTION (PHOTO 4 STYLE: FULL-WIDTH MOODY FOOD ART)
+        ======================================================== */
+        .hero-banner {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 130px 0 80px;
+            background: linear-gradient(180deg, rgba(12, 11, 13, 0.45) 0%, rgba(12, 11, 13, 0.92) 100%),
+                        url('https://cdn.warna-cloudinary.org/mrgold/bsdovk-a59c39.jpg') center/cover no-repeat;
+            overflow: hidden;
+        }
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 75% 45%, rgba(0,0,0,0.2) 0%, rgba(12, 11, 13, 0.95) 75%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 80px 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        /* Left Vertical Seal Calligraphy Stamp (Photo 4) */
+        .hero-vertical-seal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .seal-kanji {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            letter-spacing: 0.3em;
+            color: var(--color-mimosa);
+            opacity: 0.85;
+            font-weight: 700;
+        }
+        .seal-stamp-box {
+            width: 32px;
+            height: 32px;
+            border: 1.5px solid var(--color-terracotta);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-terracotta);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-content-col {
+            max-width: 580px;
+        }
+        .hero-pre-tag {
+            font-family: var(--font-body);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--color-mimosa);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .hero-headline {
+            font-family: var(--font-heading);
+            font-size: 3.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            line-height: 1.1;
+            margin-bottom: 22px;
+            color: #ffffff;
+        }
+        .hero-headline span {
+            display: block;
+            font-size: 3.2rem;
+            color: #f7f5ed;
+        }
+        .hero-description {
+            font-size: 1.05rem;
+            color: #c4c1ca;
+            line-height: 1.7;
+            margin-bottom: 34px;
+            font-weight: 300;
+        }
+        .hero-btn-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .hero-secondary-link {
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .hero-secondary-link:hover {
+            color: var(--color-mimosa);
+        }
+
+        .hero-feature-photo {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .hero-dish-card {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+            border: 1px solid rgba(229, 168, 59, 0.25);
+            max-width: 440px;
+        }
+        .hero-dish-card img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+        }
+
+        /* ========================================================
+           TASTING MENUS / 3 BUKU MENU SECTION (PHOTO 4 STYLE)
+           Clean Ivory / Off-White Card Row
+        ======================================================== */
+        .section-tasting-menus {
+            background: var(--color-ivory);
+            color: var(--text-dark);
+            padding: 85px 0 95px;
+            position: relative;
+        }
+        .tasting-header-row {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .tasting-intro-title {
+            border-right: 1px solid var(--border-ivory);
+            padding-right: 30px;
+        }
+        .tasting-intro-title h3 {
+            font-family: var(--font-heading);
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--color-wood);
+            line-height: 1.15;
+            text-transform: uppercase;
+        }
+        .tasting-intro-title hr {
+            width: 40px;
+            height: 2px;
+            background: var(--color-terracotta);
+            border: none;
+            margin-top: 14px;
+        }
+        .tasting-intro-desc {
+            font-size: 0.96rem;
+            color: #554e47;
+            line-height: 1.7;
+        }
+
+        .tasting-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+        .tasting-card {
+            background: #ffffff;
+            border: 1px solid rgba(74, 46, 27, 0.14);
+            border-radius: var(--radius-sm);
+            padding: 38px 28px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(74, 46, 27, 0.06);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .tasting-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-terracotta);
+            box-shadow: 0 18px 40px rgba(168, 56, 36, 0.14);
+        }
+        .tasting-card-icon {
+            font-size: 1.4rem;
+            color: var(--color-terracotta);
+            margin-bottom: 16px;
+        }
+        .tasting-card-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--color-wood);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .tasting-card-desc {
+            font-size: 0.86rem;
+            color: #685f57;
+            line-height: 1.6;
+            margin-bottom: 22px;
+            flex: 1;
+        }
+        .tasting-card-page-count {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--color-terracotta);
+            margin-bottom: 22px;
+            letter-spacing: 0.05em;
+        }
+
+        /* ========================================================
+           OMAKASE / CHEF ARTISAN CRAFTSMANSHIP (PHOTO 4 MIDDLE)
+        ======================================================== */
+        .section-artisan {
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+        }
+        .artisan-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 90px;
+            align-items: center;
+        }
+        .artisan-text-col {
+            padding: 70px 50px 70px 0;
+            max-width: 500px;
+        }
+        .artisan-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--color-terracotta);
+            margin-bottom: 12px;
+        }
+        .artisan-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            line-height: 1.15;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .artisan-desc {
+            font-size: 0.95rem;
+            color: #b5b2bb;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+        .artisan-img-col {
+            height: 100%;
+            min-height: 380px;
+            position: relative;
+        }
+        .artisan-img-col img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .artisan-seal-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background: #070608;
+            padding: 20px 0;
+            gap: 16px;
+        }
+        .artisan-kanji {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: #dedede;
+            letter-spacing: 0.3em;
+        }
+
+        /* ========================================================
+           EDITORIAL QUOTE BANNER (PHOTO 4 STYLE)
+        ======================================================== */
+        .section-quote {
+            background: var(--color-ivory);
+            color: var(--text-dark);
+            padding: 85px 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid var(--border-ivory);
+        }
+        .quote-icon {
+            font-size: 2.2rem;
+            color: var(--color-terracotta);
+            margin-bottom: 18px;
+        }
+        .quote-text {
+            font-family: var(--font-serif-italic);
+            font-style: italic;
+            font-size: 1.75rem;
+            max-width: 780px;
+            margin: 0 auto 18px;
+            line-height: 1.45;
+            color: #2b2621;
+        }
+        .quote-author {
+            font-size: 0.78rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #7a726a;
+            font-weight: 700;
+        }
+
+        /* ========================================================
+           MENU FAVORIT PILIHAN (AUTHENTIC INARA GROUP PHOTOS)
+        ======================================================== */
+        .section-featured-menu {
+            padding: 90px 0;
+            background: #0c0b0d;
+        }
+        .menu-top-row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .menu-section-heading {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+        .menu-filter-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .btn-filter {
+            padding: 8px 18px;
+            border-radius: var(--radius-pill);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-dark);
+            color: #b8b6bf;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-filter:hover, .btn-filter.active {
+            background: var(--color-mimosa);
+            color: #0c0b0d;
+            border-color: transparent;
+            font-weight: 800;
+        }
+
+        .menu-dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 22px;
+        }
+        .dish-card {
+            background: var(--color-dark-card);
+            border: 1px solid var(--border-dark);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .dish-card:hover {
+            border-color: var(--color-mimosa);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.6);
+        }
+        .dish-thumb {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+            background: #19181c;
+        }
+        .dish-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .dish-card:hover .dish-thumb img {
+            transform: scale(1.08);
+        }
+        .dish-cat-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(12, 11, 13, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 168, 59, 0.4);
+            color: var(--color-mimosa);
+            padding: 3px 9px;
+            border-radius: var(--radius-pill);
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .dish-info {
+            padding: 18px 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .dish-name {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+            line-height: 1.25;
+        }
+        .dish-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 14px;
+            flex: 1;
+        }
+        .dish-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+        .dish-card {
+            cursor: pointer;
+        }
+        .dish-view-hint {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.45);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 600;
+            transition: color 0.25s ease;
+        }
+        .dish-card:hover .dish-view-hint {
+            color: var(--color-mimosa);
+        }
+
+        /* ========================================================
+           DISH PHOTO PREVIEW MODAL (LIGHTBOX)
+        ======================================================== */
+        .dish-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(12, 11, 13, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 3500;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .dish-modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .dish-modal-container {
+            background: #141316;
+            border: 1px solid rgba(229, 168, 59, 0.35);
+            border-radius: 18px;
+            max-width: 520px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 50px rgba(229, 168, 59, 0.15);
+            animation: dishPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes dishPop {
+            from { transform: scale(0.92) translateY(16px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        .dish-modal-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 38px;
+            height: 38px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.25s ease;
+        }
+        .dish-modal-close:hover {
+            background: var(--color-mimosa);
+            color: #0c0b0d;
+            transform: rotate(90deg);
+        }
+        .dish-modal-media {
+            position: relative;
+            width: 100%;
+            height: 340px;
+            background: #000000;
+            overflow: hidden;
+        }
+        .dish-modal-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .dish-modal-cat-badge {
+            position: absolute;
+            bottom: 14px;
+            left: 14px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: rgba(12, 11, 13, 0.88);
+            border: 1px solid var(--color-mimosa);
+            color: var(--color-mimosa);
+        }
+        .dish-modal-body {
+            padding: 22px 24px 26px;
+        }
+        .dish-modal-meta {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .dish-modal-title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--color-ivory);
+            margin-bottom: 10px;
+            line-height: 1.25;
+        }
+        .dish-modal-desc {
+            font-size: 0.92rem;
+            color: rgba(251, 249, 241, 0.75);
+            line-height: 1.55;
+            margin-bottom: 20px;
+        }
+        .dish-modal-price-box {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .dish-modal-price-lbl {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            font-weight: 700;
+        }
+        .dish-modal-price-val {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--color-mimosa);
+        }
+        .dish-price {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--color-mimosa);
+        }
+        .btn-order-dish {
+            padding: 6px 12px;
+            border-radius: var(--radius-pill);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-dark);
+            color: #ffffff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+        .dish-card:hover .btn-order-dish {
+            background: var(--color-mimosa);
+            color: #0c0b0d;
+            border-color: transparent;
+        }
+
+        /* ========================================================
+           5 OUTLETS LOCATIONS (USER-REQUESTED DATA)
+        ======================================================== */
+        .section-outlets {
+            background: #080709;
+            padding: 95px 0;
+            border-top: 1px solid var(--border-dark);
+        }
+        .outlets-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 50px;
+        }
+        .outlets-tag {
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-mimosa);
+            margin-bottom: 10px;
+        }
+        .outlets-title {
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+        .outlets-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .outlets-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 14px;
+            align-items: stretch;
+        }
+        #outlets .container {
+            max-width: 1420px;
+        }
+        .outlet-card {
+            background: var(--color-dark-card);
+            border: 1px solid var(--border-dark);
+            border-radius: var(--radius-sm);
+            padding: 14px 14px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+        @media (max-width: 1100px) {
+            .outlets-grid {
+                display: flex;
+                overflow-x: auto;
+                gap: 14px;
+                padding-bottom: 14px;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+            .outlet-card {
+                min-width: 240px;
+                flex: 0 0 240px;
+                scroll-snap-align: start;
+            }
+        }
+        .outlet-card {
+            background: var(--color-dark-card);
+            border: 1px solid var(--border-dark);
+            border-radius: var(--radius-sm);
+            padding: 16px 16px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+        .outlet-card:hover {
+            border-color: var(--color-mimosa);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+        }
+        /* Uniform 4:3 Aspect Ratio Outlet Image Header */
+        .outlet-img-wrap {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+        .outlet-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .outlet-card:hover .outlet-img {
+            transform: scale(1.06);
+        }
+        .outlet-city-tag {
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-mimosa);
+            margin-bottom: 8px;
+        }
+        .outlet-name {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .outlet-address {
+            font-size: 0.85rem;
+            color: #aba8b2;
+            line-height: 1.55;
+            margin-bottom: 18px;
+            flex: 1;
+        }
+        .outlet-hours-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #ffffff;
+            background: rgba(229, 168, 59, 0.15);
+            border: 1px solid rgba(229, 168, 59, 0.35);
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+        .outlet-action-row {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* ========================================================
+           RESERVATION & CONTACT (PHOTO 3: +62 811-1289-940)
+        ======================================================== */
+        .section-reservations {
+            background: var(--color-ivory);
+            color: var(--text-dark);
+            padding: 80px 0;
+            border-top: 1px solid var(--border-ivory);
+        }
+        .reservation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .res-info-col h3 {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--color-wood);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+        .res-info-col p {
+            font-size: 0.96rem;
+            color: #5a524a;
+            line-height: 1.7;
+            margin-bottom: 26px;
+        }
+        .res-contact-highlight {
+            padding: 20px 24px;
+            border-radius: var(--radius-sm);
+            background: #ffffff;
+            border: 1.5px solid var(--color-mimosa);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 10px 25px rgba(74, 46, 27, 0.08);
+        }
+        .res-contact-highlight i {
+            font-size: 2rem;
+            color: #25D366;
+        }
+        .res-contact-highlight .hotline-lbl {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #8a8279;
+        }
+        .res-contact-highlight .hotline-val {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--color-wood);
+        }
+
+        .res-form-card {
+            background: #ffffff;
+            border: 1px solid var(--border-ivory);
+            border-radius: var(--radius-sm);
+            padding: 34px 30px;
+            box-shadow: 0 14px 40px rgba(74, 46, 27, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .form-ctrl {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid rgba(74, 46, 27, 0.2);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: #222;
+            outline: none;
+            background: #faf8f3;
+        }
+        .form-ctrl:focus {
+            border-color: var(--color-terracotta);
+            background: #ffffff;
+        }
+
+        /* ========================================================
+           MOODBOARD GALLERY (PHOTO 5 INSPIRATION)
+        ======================================================== */
+        .section-moodboard {
+            padding: 0;
+            background: #000000;
+        }
+        
+        .gallery-strip-item {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        .gallery-strip-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: brightness(0.85);
+        }
+        .gallery-strip-item:hover img {
+            transform: scale(1.1);
+            filter: brightness(1.05);
+        }
+
+        /* ========================================================
+           FOOTER (PHOTO 4 CLEAN STRUCTURED DARK)
+        ======================================================== */
+        .site-footer {
+            background: #070608;
+            border-top: 1px solid var(--border-dark);
+            padding: 70px 0 35px;
+            color: #b5b2bb;
+        }
+        .footer-grid-main {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        .footer-brand-title {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        .footer-brand-text {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            max-width: 380px;
+            margin-bottom: 20px;
+        }
+        .footer-section-title {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-mimosa);
+            margin-bottom: 18px;
+        }
+        .footer-links-col {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 0.88rem;
+        }
+        .footer-links-col a:hover {
+            color: #ffffff;
+        }
+        .footer-bottom-row {
+            padding-top: 25px;
+            border-top: 1px solid var(--border-dark);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #696570;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+                /* Brand Logo Image (Photo 2) */
+        .nav-brand-logo-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            object-fit: cover;
+            display: block;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        /* Mobile Responsive Dish Grid (2 columns on phone) */
+        @media (max-width: 768px) {
+            .menu-dishes-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+            }
+            .dish-card {
+                padding: 10px !important;
+                border-radius: 12px !important;
+            }
+            .dish-thumb {
+                height: 120px !important;
+                border-radius: 8px !important;
+                margin-bottom: 8px !important;
+            }
+            .dish-name {
+                font-size: 0.88rem !important;
+                margin-bottom: 4px !important;
+                line-height: 1.3 !important;
+            }
+            .dish-desc {
+                font-size: 0.72rem !important;
+                line-height: 1.4 !important;
+                margin-bottom: 8px !important;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .dish-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+        .dish-card {
+            cursor: pointer;
+        }
+        .dish-view-hint {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.45);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 600;
+            transition: color 0.25s ease;
+        }
+        .dish-card:hover .dish-view-hint {
+            color: var(--color-mimosa);
+        }
+
+        /* ========================================================
+           DISH PHOTO PREVIEW MODAL (LIGHTBOX)
+        ======================================================== */
+        .dish-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(12, 11, 13, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 3500;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .dish-modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .dish-modal-container {
+            background: #141316;
+            border: 1px solid rgba(229, 168, 59, 0.35);
+            border-radius: 18px;
+            max-width: 520px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 50px rgba(229, 168, 59, 0.15);
+            animation: dishPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes dishPop {
+            from { transform: scale(0.92) translateY(16px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        .dish-modal-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 38px;
+            height: 38px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.25s ease;
+        }
+        .dish-modal-close:hover {
+            background: var(--color-mimosa);
+            color: #0c0b0d;
+            transform: rotate(90deg);
+        }
+        .dish-modal-media {
+            position: relative;
+            width: 100%;
+            height: 340px;
+            background: #000000;
+            overflow: hidden;
+        }
+        .dish-modal-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .dish-modal-cat-badge {
+            position: absolute;
+            bottom: 14px;
+            left: 14px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: rgba(12, 11, 13, 0.88);
+            border: 1px solid var(--color-mimosa);
+            color: var(--color-mimosa);
+        }
+        .dish-modal-body {
+            padding: 22px 24px 26px;
+        }
+        .dish-modal-meta {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .dish-modal-title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--color-ivory);
+            margin-bottom: 10px;
+            line-height: 1.25;
+        }
+        .dish-modal-desc {
+            font-size: 0.92rem;
+            color: rgba(251, 249, 241, 0.75);
+            line-height: 1.55;
+            margin-bottom: 20px;
+        }
+        .dish-modal-price-box {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .dish-modal-price-lbl {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            font-weight: 700;
+        }
+        .dish-modal-price-val {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--color-mimosa);
+        }
+            .dish-price {
+                font-size: 0.85rem !important;
+            }
+            .dish-order-btn, .btn-order-dish {
+                padding: 4px 8px !important;
+                font-size: 0.72rem !important;
+            }
+            .modal-book-container {
+                padding: 14px 12px 18px !important;
+                width: 96% !important;
+            }
+        }
+
+                        /* ========================================================
+           BOOK MENU VIEWER MODAL - ULTRA-LARGE & FOCUSED ON READABILITY
+        ======================================================== */
+        .modal-book-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 3000;
+            background: rgba(0, 0, 0, 0.96);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-book-backdrop.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-book-container {
+            background: #0c0b0d;
+            border: 2px solid var(--color-mimosa);
+            border-radius: 20px;
+            width: 100%;
+            max-height: 97vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.98), 0 0 45px rgba(229, 168, 59, 0.3);
+            padding: 14px 18px 16px;
+            position: relative;
+            transition: max-width 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+            overflow: hidden;
+        }
+        .modal-book-container.mode-pc {
+            max-width: 95vw;
+            width: 1360px;
+        }
+        .modal-book-container.mode-mobile {
+            max-width: 480px;
+            width: 96%;
+        }
+        .modal-book-container.is-fullscreen {
+            max-width: 100vw !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-height: 100vh !important;
+            border-radius: 0 !important;
+            border: none !important;
+            padding: 10px 14px 12px !important;
+        }
+
+        /* Top Bar & Actions */
+        .modal-book-top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-dark);
+            flex-shrink: 0;
+        }
+
+        /* Mode Switcher Pill Bar */
+        .view-mode-pill-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 3px 6px;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--border-dark);
+            flex-shrink: 0;
+        }
+        .btn-mode-pill {
+            padding: 5px 14px;
+            border-radius: var(--radius-pill);
+            background: transparent;
+            border: none;
+            color: #9f9ba6;
+            font-size: 0.74rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+        .btn-mode-pill:hover {
+            color: #ffffff;
+        }
+        .btn-mode-pill.active {
+            background: var(--color-mimosa);
+            color: #0c0b0d;
+            font-weight: 800;
+            box-shadow: 0 2px 10px rgba(229, 168, 59, 0.3);
+        }
+
+        /* 3 Book Choice Tabs */
+        .modal-book-nav-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            flex-shrink: 0;
+            min-height: 42px;
+            align-items: stretch;
+        }
+        .btn-book-tab {
+            flex: 1;
+            min-height: 42px;
+            height: 42px;
+            padding: 0 14px;
+            border-radius: var(--radius-pill);
+            background: #18171b;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #c5c2cc;
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+        .btn-book-tab:hover {
+            color: #ffffff;
+            border-color: var(--color-mimosa);
+            background: #232227;
+        }
+        .btn-book-tab.active {
+            background: #ffffff !important;
+            color: #0c0b0d !important;
+            border-color: #ffffff !important;
+            font-weight: 800 !important;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
+        }
+
+        /* Headline & Info Row */
+        .modal-book-info-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 0 4px;
+            flex-shrink: 0;
+        }
+
+        /* HUGE BOOK VIEWPORT - GIVES MAXIMUM VISIBILITY TO THE MENU PAGES */
+        .book-slide-viewport {
+            position: relative;
+            width: 100%;
+            flex: 1;
+            border-radius: 14px;
+            overflow: auto;
+            background: #000000;
+            border: 1px solid rgba(229, 168, 59, 0.4);
+            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.9), 0 15px 35px rgba(0, 0, 0, 0.85);
+            user-select: none;
+            touch-action: pan-x pan-y pinch-zoom;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-in;
+        }
+        .modal-book-container.mode-pc .book-slide-viewport {
+            height: calc(90vh - 170px);
+            min-height: 480px;
+            max-height: 820px;
+        }
+        .modal-book-container.mode-mobile .book-slide-viewport {
+            height: calc(88vh - 170px);
+            min-height: 460px;
+            max-height: 750px;
+        }
+        .modal-book-container.is-fullscreen .book-slide-viewport {
+            height: calc(100vh - 145px) !important;
+            max-height: 100vh !important;
+        }
+
+        /* Center or left spine fold shadow */
+        .book-slide-viewport.spine-left::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 26px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.12) 60%, transparent 100%);
+            pointer-events: none;
+            z-index: 3;
+        }
+        .book-slide-viewport.spine-center::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            height: 100%;
+            background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.38) 50%, transparent 100%);
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .book-slide-stage {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000000;
+            transition: transform 0.25s ease;
+        }
+        .book-slide-img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.25s ease;
+        }
+
+        /* Zoomed State */
+        .book-slide-viewport.is-zoomed {
+            cursor: zoom-out;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        .book-slide-viewport.is-zoomed .book-slide-stage {
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+            padding: 20px;
+        }
+        .book-slide-viewport.is-zoomed .book-slide-img {
+            max-width: none;
+            max-height: none;
+            width: 180%;
+            height: auto;
+        }
+        .modal-book-container.mode-mobile .book-slide-viewport.is-zoomed .book-slide-img {
+            width: 200%;
+        }
+
+        /* Controls Row */
+        .book-controls-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin-top: 10px;
+            padding: 0 4px;
+            flex-shrink: 0;
+        }
+        .btn-book-nav {
+            padding: 8px 18px;
+            border-radius: var(--radius-pill);
+            background: #2a292d;
+            border: 1px solid #3c3a42;
+            color: #ffffff;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+        .btn-book-nav:hover:not(:disabled) {
+            background: #ffffff;
+            color: #0c0b0d;
+            border-color: #ffffff;
+        }
+        .btn-book-nav:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+
+        .btn-book-tool {
+            padding: 6px 12px;
+            border-radius: var(--radius-pill);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #d0cdd6;
+            font-size: 0.74rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+        .btn-book-tool:hover {
+            background: #ffffff;
+            color: #0c0b0d;
+            border-color: #ffffff;
+        }
+        .btn-book-tool.active {
+            background: var(--color-mimosa);
+            color: #0c0b0d;
+            border-color: transparent;
+            font-weight: 800;
+        }
+
+        .book-range-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 5px;
+            border-radius: 5px;
+            background: #3a3840;
+            outline: none;
+        }
+        .book-range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--color-mimosa);
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(229, 168, 59, 0.7);
+        }
+
+        .section-moodboard {
+            padding: 85px 0 70px;
+            background: #080709;
+            border-top: 1px solid var(--border-dark);
+            border-bottom: 1px solid var(--border-dark);
+        }
+        .moodboard-header {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 40px;
+        }
+        .moodboard-tag {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            color: var(--color-mimosa);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .moodboard-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            color: #ffffff;
+            margin-bottom: 14px;
+        }
+        .moodboard-subtitle {
+            font-size: 0.8rem;
+            color: #a19da7;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+        }
+        .brand-photos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .brand-photo-card {
+            position: relative;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: var(--color-dark-card);
+            border: 1px solid var(--border-dark);
+            height: 260px;
+            transition: var(--transition);
+        }
+        .brand-photo-card.card-wide {
+            grid-column: span 2;
+        }
+        .brand-photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: brightness(0.85);
+        }
+        .brand-photo-card:hover img {
+            transform: scale(1.06);
+            filter: brightness(1.02);
+        }
+        .brand-photo-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(12, 11, 13, 0.95) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+        .brand-photo-overlay h4 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        .brand-photo-overlay p {
+            font-size: 0.78rem;
+            color: #d0cdd6;
+            line-height: 1.4;
+        }
+        .brand-badge-pill {
+            display: inline-block;
+            background: var(--color-mimosa);
+            color: #0c0b0d;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: var(--radius-pill);
+            margin-bottom: 8px;
+            width: fit-content;
+        }
+        @media (max-width: 900px) {
+            .brand-photos-grid {
+                grid-template-columns: 1fr;
+            }
+            .brand-photo-card.card-wide {
+                grid-column: span 1;
+            }
+            .brand-photo-card {
+                height: 220px;
+            }
+        }
+
+        .floating-wa-btn {
+            position: fixed;
+            bottom: 26px;
+            right: 26px;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            background: #25D366;
+            color: #ffffff;
+            border-radius: var(--radius-pill);
+            font-size: 0.88rem;
+            font-weight: 800;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+        }
+        .floating-wa-btn:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 14px 30px rgba(37, 211, 102, 0.6);
+            color: #ffffff;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-headline { font-size: 3rem; }
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-vertical-seal { display: none; }
+            .tasting-cards-grid { grid-template-columns: 1fr; }
+            .tasting-header-row { grid-template-columns: 1fr; }
+            .artisan-grid { grid-template-columns: 1fr; }
+            .artisan-seal-col { display: none; }
+            .reservation-grid { grid-template-columns: 1fr; }
+            
+            .footer-grid-main { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-menu, .nav-right-actions .nav-cta-btn { display: none; }
+            .mobile-hamburger { display: block; }
+            .hero-headline { font-size: 2.3rem; }
+            .hero-headline span { font-size: 2rem; }
+            .quote-text { font-size: 1.3rem; }
+            .form-row-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================================
+         HEADER / NAVBAR (WITH "OPEN 24 HOURS" LOGO BADGE)
+    ======================================================== -->
+    <header class="site-header" id="navbar">
+        <div class="container navbar">
+            <!-- Brand & Open 24 Hours Logo Badge (Photo 5) -->
+            <a href="#home" class="nav-brand-group">
+                <img src="logo_open_24h_cropped.png" alt="Dim Sum Inc. Open 24 Hours Logo" class="nav-brand-logo-img">
+                <div>
+                    <div class="nav-brand-text">DIM SUM INC.</div>
+                    <div class="nav-brand-sub">Open 24 Hours Ã¢â‚¬Â¢ Est. 2011</div>
+                </div>
+            </a>
+
+            <!-- Navigation Links (Photo 4 Style) -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#tasting-menus" class="nav-link">Buku Menu</a></li>
+                    <li><a href="#artisan" class="nav-link">Craft</a></li>
+                    <li><a href="#featured-menu" class="nav-link">Dim Sum</a></li>
+                    <li><a href="#outlets" class="nav-link">5 Outlets</a></li>
+                    <li><a href="#reservations" class="nav-link">Reservasi</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Toggle Only (Order Online button removed per request) -->
+            <div class="nav-right-actions">
+                <button class="mobile-hamburger" id="mobileToggle" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#tasting-menus" class="mobile-link">3 Buku Menu Digital</a>
+        <a href="#artisan" class="mobile-link">Artisan Craft</a>
+        <a href="#featured-menu" class="mobile-link">Menu Dim Sum</a>
+        <a href="#outlets" class="mobile-link">5 Outlets Kami</a>
+        <a href="#reservations" class="mobile-link">Reservasi & Kontak</a>
+        
+    </div>
+
+    <!-- ========================================================
+         HERO SECTION (PHOTO 4 STYLE: MOODY FOOD PHOTOGRAPHY)
+    ======================================================== -->
+    <section id="home" class="hero-banner">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Left Vertical Calligraphy Seal Stamp (Photo 4) -->
+                <div class="hero-vertical-seal">
+                    <div class="seal-kanji">é»žå¿ƒä¼šç¤¾</div>
+                    <div class="seal-stamp-box">24H</div>
+                </div>
+
+                <!-- Center Main Headline -->
+                <div class="hero-content-col">
+                    <div class="hero-pre-tag">
+                        <i class="fas fa-circle" style="font-size: 6px; color: var(--color-mimosa);"></i>
+                        CHINESE HERITAGE â€¢ SINCE 2011
+                    </div>
+
+                    <h1 class="hero-headline">
+                        CHINESE TRADITION.
+                        <span>PERFECTED.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Menghadirkan seni dim sum oriental autentik buatan tangan segar setiap hari. Dibuat dari bahan-bahan halal berkualitas prima dan siap memanjakan lidah Anda 24 jam setiap hari.
+                    </p>
+
+                    <div class="hero-btn-row">
+                        <a href="#tasting-menus" class="btn btn-terracotta">
+                            Explore Menu
+                        </a>
+                        <a href="#outlets" class="hero-secondary-link">
+                            5 Outlets &raquo;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Feature Image Card -->
+                <div class="hero-feature-photo">
+                    <div class="hero-dish-card"><img src="brand_photos/hero_siomay_steamer.jpg" alt="Handcrafted Siomay Steamer Dim Sum Inc"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         TASTING MENUS / 3 BUKU MENU RESMI (PHOTO 4 STYLE)
+         Clean Ivory & Terracotta Row with Viewer Launchers
+    ======================================================== -->
+    <section id="tasting-menus" class="section-tasting-menus">
+        <div class="container">
+            <div class="tasting-header-row">
+                <div class="tasting-intro-title">
+                    <h3>Buku Menu<br>Resmi</h3>
+                    <hr>
+                </div>
+                <div class="tasting-intro-desc">
+                    Pilih dan telusuri buku menu resmi Dim Sum Inc. Setiap buku telah dikompresi ringan dalam format lembar tunggal (*single page*) beresolusi tajam yang nyaman dibaca di smartphone maupun desktop.
+                </div>
+            </div>
+
+            <!-- 3 Ivory Book Cards -->
+            <div class="tasting-cards-grid">
+                <!-- Book 1: Signature -->
+                <div class="tasting-card" onclick="openBookViewer('signature', 1)">
+                    <div>
+                        <div class="tasting-card-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4 class="tasting-card-title">DSI Signature</h4>
+                        <p class="tasting-card-desc">
+                            Menu terlengkap: Breakfast Special, Sajiva Artisan Roastery, The Bar & Refreshments, Western Signature, Steamed & Fried Dim Sum, dan Porridge Bar.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="tasting-card-page-count">12 Halaman</div>
+                        <button class="btn btn-black" style="width: 100%;">View Menu</button>
+                    </div>
+                </div>
+
+                <!-- Book 2: Bali -->
+                <div class="tasting-card" onclick="openBookViewer('bali', 1)">
+                    <div>
+                        <div class="tasting-card-icon">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                        <h4 class="tasting-card-title">DSI Bali</h4>
+                        <p class="tasting-card-desc">
+                            Menu khas pulau dewata: Fried Dimsum, Beers, Tropical Organic Juice, Coolers Mocktails, Set Porridge, dan hidangan oriental & lokal.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="tasting-card-page-count">8 Halaman</div>
+                        <button class="btn btn-black" style="width: 100%;">View Menu</button>
+                    </div>
+                </div>
+
+                <!-- Book 3: Regular (Plaza Festival, Kemang, Karawaci) -->
+                <div class="tasting-card" onclick="openBookViewer('regular', 1)">
+                    <div>
+                        <div class="tasting-card-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h4 class="tasting-card-title">Plaza Festival, Kemang & Karawaci</h4>
+                        <p class="tasting-card-desc">
+                            Menu resmi outlet DSI 1-3: Aneka Dim Sum kukus & goreng, Nasi Goreng Kampoeng & Rendang, Mie Jawa, Sup Iga, dan Finest Tea.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="tasting-card-page-count">8 Halaman</div>
+                        <button class="btn btn-black" style="width: 100%;">View Menu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         ARTISAN CRAFTSMANSHIP SPOTLIGHT (PHOTO 4 MIDDLE)
+    ======================================================== -->
+    <section id="artisan" class="section-artisan">
+        <div class="container">
+            <div class="artisan-grid">
+                <!-- Text Col -->
+                <div class="artisan-text-col">
+                    <div class="artisan-tag">THE ART OF DIM SUM</div>
+                    <h3 class="artisan-title">Handcrafted<br>Perfection.</h3>
+                    <p class="artisan-desc">
+                        Di Dim Sum Inc, kami percaya dim sum bukan sekadar makanan instan, melainkan dedikasi kuliner. Setiap butir pangsit, kulit har gau kristal, dan pao lembut dibentuk secara individual dengan tangan terampil setiap pagi.
+                    </p>
+                    <p class="artisan-desc">
+                        Bahan-bahan segar bermutu tinggi, 100% halal tanpa minyak babi (No Pork, No Lard), serta siap dinikmati kapan saja â€” pagi, siang, sore, hingga tengah malam.
+                    </p>
+                    <a href="#outlets" class="btn btn-terracotta">Kunjungi Outlet</a>
+                </div>
+
+                <!-- Image Col -->
+                <div class="artisan-img-col"><img src="brand_photos/chef_fire_wok.jpg" alt="Chef Wok Hei Flame Craftsmanship Dim Sum Inc"></div>
+
+                <!-- Calligraphy Seal Col -->
+                <div class="artisan-seal-col">
+                    <div class="artisan-kanji">æ‰‹å·¥é»žå¿ƒ</div>
+                    <div class="seal-stamp-box">æ­£çµ±</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         BRAND ATMOSPHERE & IDENTITY MOODBOARD (PHOTO 4 & 5)
+    ======================================================== -->
+    <section id="brand-identity" class="section-moodboard">
+        <div class="container">
+            <div class="moodboard-header">
+                <div class="moodboard-tag">BRAND IDENTITY &bull; EST. 2011</div>
+                <h3 class="moodboard-title">East Meets West. Handcrafted Daily.</h3>
+                <p class="moodboard-subtitle">
+                    WOOD &bull; IRON &bull; CONCRETE &bull; BRICK &bull; VINTAGE &bull; INDUSTRIAL &bull; CLASSIC NEW YORKER
+                </p>
+            </div>
+
+            <!-- Authentic Photo 5 Brand Grid -->
+            <div class="brand-photos-grid">
+                <div class="brand-photo-card card-wide">
+                    <img src="brand_photos/storefront_24h_window.jpg" alt="Open 24 Hours Storefront Window Dim Sum Inc">
+                    <div class="brand-photo-overlay">
+                        <span class="brand-badge-pill">Open 24 Hours</span>
+                        <h4>Dim Sum & Beer Co. &bull; Est. 2011</h4>
+                        <p>A trademark brand melayani pencinta dim sum otentik 24 jam non-stop.</p>
+                    </div>
+                </div>
+
+                <div class="brand-photo-card">
+                    <img src="brand_photos/bao_hands.jpg" alt="Fresh Handcrafted Steamed Bao">
+                    <div class="brand-photo-overlay">
+                        <h4>Handcrafted Steamed Bao</h4>
+                        <p>Tekstur lembut dengan isian daging ayam & udang gurih istimewa.</p>
+                    </div>
+                </div>
+
+                <div class="brand-photo-card">
+                    <img src="brand_photos/beer_cheers.jpg" alt="Dim Sum & Beer Cheers">
+                    <div class="brand-photo-overlay">
+                        <h4>Best Enjoyed Loud</h4>
+                        <p>Perpaduan sempurna dim sum hangat dan bir segar bersama teman.</p>
+                    </div>
+                </div>
+
+                <div class="brand-photo-card">
+                    <img src="brand_photos/steamed_skewers_table.jpg" alt="Steamed Dim Sum Platter Feast">
+                    <div class="brand-photo-overlay">
+                        <h4>Oriental Comfort Feast</h4>
+                        <p>Pilihan kukusan, sate oriental, dan pao hangat di meja kayu khas.</p>
+                    </div>
+                </div>
+
+                <div class="brand-photo-card card-wide">
+                    <img src="brand_photos/restaurant_patio.jpg" alt="Modern Brick & Patio Atmosphere">
+                    <div class="brand-photo-overlay">
+                        <span class="brand-badge-pill">Modern Ambience</span>
+                        <h4>Industrial Vintage Dining</h4>
+                        <p>Suasana santai nan berkelas dengan sentuhan bata ekspos, kayu, dan besi industrial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         EDITORIAL QUOTE (PHOTO 4 STYLE)
+    ======================================================== -->
+    <section class="section-quote">
+        <div class="container">
+            <div class="quote-icon">â€œ</div>
+            <p class="quote-text">
+                An extraordinary dim sum experience from morning to midnight. The perfect harmony of steam, crispness, and oriental hospitality.
+            </p>
+            <div class="quote-author">â€” DIM SUM INC. TRADEMARK BRAND EST. 2011 â€”</div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         MENU FAVORIT PILIHAN (AUTHENTIC INARA GROUP PHOTOS)
+    ======================================================== -->
+    <section id="featured-menu" class="section-featured-menu">
+        <div class="container">
+            <div class="menu-top-row">
+                <div>
+                    <div style="font-size: 0.78rem; font-weight: 700; color: var(--color-mimosa); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px;">
+                        AUTHENTIC RECIPES
+                    </div>
+                    <h3 class="menu-section-heading">Menu Dim Sum Favorit</h3>
+                </div>
+
+                <div class="menu-filter-buttons">
+                    <button class="btn-filter active" onclick="filterDishes('all', this)">Semua</button>
+                    <button class="btn-filter" onclick="filterDishes('steamed', this)">Steamed Dim Sum</button>
+                    <button class="btn-filter" onclick="filterDishes('fried', this)">Fried Dim Sum</button>
+                </div>
+            </div>
+
+            <!-- Dishes Grid with Real Inara Group Photos -->
+            <div class="menu-dishes-grid" id="dishesGrid">
+                <!-- Dish: Fried Shiu May -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Fried%20Shiu%20May.jpeg" alt="Fried Shiu May" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Fried Shiu May</h4>
+                        <p class="dish-desc">Pan-fried prawn &amp; chicken shiu may</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Crispy Prawn Ball -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Crispy%20Prawn%20Ball.jpeg" alt="Crispy Prawn Ball" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Crispy Prawn Ball</h4>
+                        <p class="dish-desc">Thin sliced deep fried wonton skin with prawn filling</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Fried Durian Spring Roll -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Fried%20Durian%20Spring%20Roll.jpeg" alt="Fried Durian Spring Roll" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Fried Durian Spring Roll</h4>
+                        <p class="dish-desc">Durian paste melted in deep fried crispy batter</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Fried Mantao -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Fried%20Mantao.jpeg" alt="Fried Mantao" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Fried Mantao</h4>
+                        <p class="dish-desc">Deep fried round chinese bun served with condensed milk</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Fried Dao Sa Pao -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Fried%20Dao%20Sa%20Pao.jpeg" alt="Fried Dao Sa Pao" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Fried Dao Sa Pao</h4>
+                        <p class="dish-desc">Deep fried pluffy steamed bun filled with red bean paste</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Ngohiong -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Ngohiong.jpeg" alt="Ngohiong" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Ngohiong</h4>
+                        <p class="dish-desc">Fried spring roll filled with seasoned chicken and vegetables crispy on the outside and savory inside</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Thin Crust Daosa -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Thin%20Crust%20Daosa.jpeg" alt="Thin Crust Daosa" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Thin Crust Daosa</h4>
+                        <p class="dish-desc">Thin-crispy fried batter filled with red bean paste, topped with aromatic sesame seed</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Fried Guo Tie -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Fried%20Guo%20Tie.jpeg" alt="Fried Guo Tie" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Fried Guo Tie</h4>
+                        <p class="dish-desc">Pan fried dumpling made with shrimp, chicken &amp; vegetable filling</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Mayo Prawn Dumpling -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Mayo%20Prawn%20Dumpling.jpeg" alt="Mayo Prawn Dumpling" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Mayo Prawn Dumpling</h4>
+                        <p class="dish-desc">Fried prawn wonton served with mayonaise</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Crispy Prawn with cream mala sauce -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Crispy%20Prawn%20with%20cream%20mala%20sauce.jpeg" alt="Crispy Prawn with cream mala sauce" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Crispy Prawn with cream mala sauce</h4>
+                        <p class="dish-desc">Thin sliced deep fried wonton skin with prawn filling served with special cream mala sauce</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Spring Roll -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Spring%20Roll.jpeg" alt="Spring Roll" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Spring Roll</h4>
+                        <p class="dish-desc">Fried prawn &amp; chicken spring roll wrapped with popiah skin</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Mozzarella Spring Roll -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Mozzarella%20Spring%20Roll.jpeg" alt="Mozzarella Spring Roll" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Mozzarella Spring Roll</h4>
+                        <p class="dish-desc">Spring roll with prawn and mozarella cheese filling</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Mushroom & Mozzarella Spring Roll -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Mushroom%20and%20Mozzarella%20Spring%20Roll.jpeg" alt="Mushroom &amp; Mozzarella Spring Roll" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Mushroom &amp; Mozzarella Spring Roll</h4>
+                        <p class="dish-desc">Fried spring roll filled with chopped mushroom &amp; melted mozzarella</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Beancurd Skin Spring Roll -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Beancurd%20Skin%20Spring%20Roll.jpeg" alt="Beancurd Skin Spring Roll" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Beancurd Skin Spring Roll</h4>
+                        <p class="dish-desc">Beancurd skin spring roll with prawn and chicken filling</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Shredded prawn cakwe -->
+                <div class="dish-card" data-cat="fried" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-fried">Fried</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Shredded%20prawn%20cakwe%20.jpeg" alt="Shredded prawn cakwe" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Shredded prawn cakwe</h4>
+                        <p class="dish-desc">Fried dough fritter with prawn filling topped with chicken floss</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Shiu May -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg" alt="Shiu May" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Shiu May</h4>
+                        <p class="dish-desc">Minced chicken and prawn dumpling wrapped in thin wheat flour wraper</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Ceong Fan Chicken -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Ceong%20Fan%20Chicken.jpeg" alt="Ceong Fan Chicken" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Ceong Fan Chicken</h4>
+                        <p class="dish-desc">Steamed wide rice flour roll with chicken char siu filling and topped with special soy sauce</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Lo Mai Gai -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Lo%20Mai%20Gai.jpeg" alt="Lo Mai Gai" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Lo Mai Gai</h4>
+                        <p class="dish-desc">Steamed glutinous rice with chicken filling in dried lotus leaf wrap</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Pai Kut -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Pai%20Kut.jpeg" alt="Pai Kut" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Pai Kut</h4>
+                        <p class="dish-desc">Steamed beef spare ribs in fermented black bean sauce</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Dumpling in black Vinegar Sauce -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Dumpling%20in%20black%20Vinegar%20Sauce.jpeg" alt="Dumpling in black Vinegar Sauce" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Dumpling in black Vinegar Sauce</h4>
+                        <p class="dish-desc">Chicken and vegetables dumpling served in tangy &amp; spicy broth</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Dumpling in Agedashi Sauce -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Dumpling%20in%20Agedashi%20Sauce.jpeg" alt="Dumpling in Agedashi Sauce" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Dumpling in Agedashi Sauce</h4>
+                        <p class="dish-desc">Minced chicken, shrimp, and vegetables wrapped in gyoza skin served with Japanese style agedashi</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Creamy Spinach Prawn Dumpling -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Creamy%20Spinach%20Prawn%20Dumpling.jpeg" alt="Creamy Spinach Prawn Dumpling" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Creamy Spinach Prawn Dumpling</h4>
+                        <p class="dish-desc">Steamed dumpling filled with prawn, spinach and cream</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Oyster Sauce Spring Roll -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Oyster%20Sauce%20Spring%20Roll.jpeg" alt="Oyster Sauce Spring Roll" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Oyster Sauce Spring Roll</h4>
+                        <p class="dish-desc">Chicken &amp; shrimp wrapped in bean curd skin, served with oyster sauce</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Choipan -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Choipan.jpeg" alt="Choipan" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Choipan</h4>
+                        <p class="dish-desc">Thin rice flour skin filled with yam and ebi shrimp</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Char Siu Pao -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Char%20Siu%20Pao.jpeg" alt="Char Siu Pao" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Char Siu Pao</h4>
+                        <p class="dish-desc">Chinese steamed bun with barbeque chicken filling</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Salted Egg Pao -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Salted%20Egg%20Pao.jpeg" alt="Salted Egg Pao" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Salted Egg Pao</h4>
+                        <p class="dish-desc">Steamed black bun with tasty salted egg custard filling</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Shiu May Mozzarella -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May%20Mozzarella.jpeg" alt="Shiu May Mozzarella" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Shiu May Mozzarella</h4>
+                        <p class="dish-desc">Steamed shiu may with torched mozzarella topping</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Dao Sa Pao -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Dao%20Sa%20Pao.jpeg" alt="Dao Sa Pao" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Dao Sa Pao</h4>
+                        <p class="dish-desc">Fluffy steamed bun filled with red bean paste</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Chicken Curry Pao -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Chicken%20Curry%20Pao.jpeg" alt="Chicken Curry Pao" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Chicken Curry Pao</h4>
+                        <p class="dish-desc">Pan-seared steamed bun filled with tasty chicken curry</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Steamed Mantao -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Steamed%20Mantao.jpeg" alt="Steamed Mantao" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Steamed Mantao</h4>
+                        <p class="dish-desc">Fluffy steamed bun served with condensed milk</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Har Gau -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Har%20Gau.jpeg" alt="Har Gau" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Har Gau</h4>
+                        <p class="dish-desc">Thin and translucent dumpling filled with perfectly cooked shrimp</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Xiao Long Bao Chicken -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Xiao%20Long%20Bao%20Chicken.jpeg" alt="Xiao Long Bao Chicken" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Xiao Long Bao Chicken</h4>
+                        <p class="dish-desc">Delicate steamed dumpling filled with chicken meat</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Xiao Long Bao Chocolate -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Xiao%20Long%20Bao%20Chocolate.jpeg" alt="Xiao Long Bao Chocolate" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Xiao Long Bao Chocolate</h4>
+                        <p class="dish-desc">Delicate steamed dumpling filled with chocolate</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Steamed Guo Tie -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Steamed%20Guo%20Tie.jpeg" alt="Steamed Guo Tie" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Steamed Guo Tie</h4>
+                        <p class="dish-desc">Steamed dumpling filled with mixed shrimp, chicken and vegetables</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Chicken Feet -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Chicken%20Feet.jpeg" alt="Chicken Feet" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Chicken Feet</h4>
+                        <p class="dish-desc">Steamed tender chicken feet simmered and flavoured in black fermented bean sauce</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Coriander & Mushroom Prawn Dumpling -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Coriander%20and%20Mushroom%20%20Prawn%20Dumpling.jpeg" alt="Coriander &amp; Mushroom Prawn Dumpling" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Coriander &amp; Mushroom Prawn Dumpling</h4>
+                        <p class="dish-desc">Steamed dumpling filled with prawn, mushroom and coriander</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish: Ceong Fan Shrimp -->
+                <div class="dish-card" data-cat="steamed" onclick="openDishModal(this)">
+                    <div class="dish-thumb">
+                        <span class="dish-cat-badge badge-steamed">Steamed</span>
+                        <img src="https://brands.inaragroup.id/images/menu/dim_sum_inc/Ceong%20Fan%20Shrimp.jpeg" alt="Ceong Fan Shrimp" loading="lazy" onerror="this.src='https://brands.inaragroup.id/images/menu/dim_sum_inc/Shiu%20May.jpeg'">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-meta">
+                            <span class="dish-halal-dot"></span> Halal Certified
+                        </div>
+                        <h4 class="dish-name">Ceong Fan Shrimp</h4>
+                        <p class="dish-desc">Steamed wide rice flour roll with shrimp char siu filling and topped with special soy sauce</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">Rp 35.000</span>
+                            <span class="dish-view-hint"><i class="fas fa-eye"></i> Foto</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         5 OUTLETS RESMI (EXACT USER DATA & DIRECT LINKS)
+    ======================================================== -->
+    <section id="outlets" class="section-outlets">
+        <div class="container">
+            <div class="outlets-header">
+                <div class="outlets-tag">5 Strategic Locations</div>
+                <h3 class="outlets-title">Kunjungi 5 Outlet Kami</h3>
+                <p class="outlets-subtitle">
+                    Nikmati sajian dim sum hangat kapan saja di 5 outlet resmi kami dengan fasilitas lengkap & layanan siap antar:
+                </p>
+            </div>
+
+            <div class="outlets-grid">
+                <!-- Outlet 1: Plaza Festival -->
+                <div class="outlet-card">
+                    <div>
+                        <div class="outlet-img-wrap">
+                            <img src="outlet_photos/outlet_plaza_festival.jpg" alt="Dim Sum Inc Plaza Festival" class="outlet-img" loading="lazy">
+                        </div>
+                        <div class="outlet-city-tag">Jakarta Selatan</div>
+                        <h4 class="outlet-name">Plaza Festival</h4>
+                        <p class="outlet-address">
+                            Jl. H. R. Rasuna Said No.22 Lantai Dasar, Setiabudi, Jakarta Selatan 12920
+                        </p>
+                        <div class="outlet-hours-badge">
+                            <i class="fas fa-clock" style="color: var(--color-mimosa);"></i> Open 24 Hours
+                        </div>
+                    </div>
+                    <div class="outlet-action-row">
+                        <a href="https://maps.app.goo.gl/sWFJuo7nPCKuN6Ya8" target="_blank" class="btn btn-terracotta" style="padding: 10px; font-size: 0.78rem;">
+                            <i class="fas fa-map-marker-alt"></i> Buka Google Maps
+                        </a>
+                        <a href="https://wa.me/6282143847204?text=Halo%20Dimsum%20Inc%20Plaza%20Festival%2C%20saya%20ingin%20reservasi%20meja" target="_blank" class="btn btn-black" style="padding: 10px 8px; font-size: 0.78rem; width: 100%; justify-content: center;"><i class="fab fa-whatsapp" style="color: #25D366;"></i> Reservasi / Book</a>
+                    </div>
+                </div>
+
+                <!-- Outlet 2: Kemang -->
+                <div class="outlet-card">
+                    <div>
+                        <div class="outlet-img-wrap">
+                            <img src="outlet_photos/outlet_kemang.jpg" alt="Dim Sum Inc Kemang Raya" class="outlet-img" loading="lazy">
+                        </div>
+                        <div class="outlet-city-tag">Jakarta Selatan</div>
+                        <h4 class="outlet-name">Kemang Raya</h4>
+                        <p class="outlet-address">
+                            Jl. Kemang Raya No.20 11, RT.11/RW.5, Bangka, Mampang Prapatan, Jakarta Selatan
+                        </p>
+                        <div class="outlet-hours-badge">
+                            <i class="fas fa-clock" style="color: var(--color-mimosa);"></i> Open 24 Hours
+                        </div>
+                    </div>
+                    <div class="outlet-action-row">
+                        <a href="https://maps.app.goo.gl/c9wDXcarnfnqNQiL8" target="_blank" class="btn btn-terracotta" style="padding: 10px; font-size: 0.78rem;">
+                            <i class="fas fa-map-marker-alt"></i> Buka Google Maps
+                        </a>
+                        <a href="https://wa.me/6281288648571?text=Halo%20Dimsum%20Inc%20Kemang%2C%20saya%20ingin%20reservasi%20meja" target="_blank" class="btn btn-black" style="padding: 10px 8px; font-size: 0.78rem; width: 100%; justify-content: center;"><i class="fab fa-whatsapp" style="color: #25D366;"></i> Reservasi / Book</a>
+                    </div>
+                </div>
+
+                <!-- Outlet 3: Karawaci -->
+                <div class="outlet-card">
+                    <div>
+                        <div class="outlet-img-wrap">
+                            <img src="outlet_photos/outlet_karawaci.jpg" alt="Dim Sum Inc Karawaci" class="outlet-img" loading="lazy">
+                        </div>
+                        <div class="outlet-city-tag">Tangerang, Banten</div>
+                        <h4 class="outlet-name">Karawaci</h4>
+                        <p class="outlet-address">
+                            Supermal Karawaci Ground Floor, Jl. Boulevard Diponegoro No.105, Tangerang
+                        </p>
+                        <div class="outlet-hours-badge">
+                            <i class="fas fa-clock" style="color: var(--color-mimosa);"></i> Buka Setiap Hari
+                        </div>
+                    </div>
+                    <div class="outlet-action-row">
+                        <a href="https://maps.app.goo.gl/QzEncmeHnJfviJhd6" target="_blank" class="btn btn-terracotta" style="padding: 10px; font-size: 0.78rem;">
+                            <i class="fas fa-map-marker-alt"></i> Buka Google Maps
+                        </a>
+                        <a href="https://wa.me/6282113027357?text=Halo%20Dimsum%20Inc%20Karawaci%2C%20saya%20ingin%20reservasi%20meja" target="_blank" class="btn btn-black" style="padding: 10px 8px; font-size: 0.78rem; width: 100%; justify-content: center;"><i class="fab fa-whatsapp" style="color: #25D366;"></i> Reservasi / Book</a>
+                    </div>
+                </div>
+
+                <!-- Outlet 4: Bali -->
+                <div class="outlet-card">
+                    <div>
+                        <div class="outlet-img-wrap">
+                            <img src="outlet_photos/outlet_bali.jpg" alt="Dim Sum Inc Bali" class="outlet-img" loading="lazy">
+                        </div>
+                        <div class="outlet-city-tag">Bali Island</div>
+                        <h4 class="outlet-name">Bali</h4>
+                        <p class="outlet-address">
+                            Jl. Dewi Sri No.101, Legian, Kuta, Kabupaten Badung, Bali 80361
+                        </p>
+                        <div class="outlet-hours-badge">
+                            <i class="fas fa-clock" style="color: var(--color-mimosa);"></i> Open 24 Hours
+                        </div>
+                    </div>
+                    <div class="outlet-action-row">
+                        <a href="https://maps.app.goo.gl/565mByXn3FJhXYWY8" target="_blank" class="btn btn-terracotta" style="padding: 10px; font-size: 0.78rem;">
+                            <i class="fas fa-map-marker-alt"></i> Buka Google Maps
+                        </a>
+                        <a href="https://wa.me/6281247946387?text=Halo%20Dimsum%20Inc%20Bali%2C%20saya%20ingin%20reservasi%20meja" target="_blank" class="btn btn-black" style="padding: 10px 8px; font-size: 0.78rem; width: 100%; justify-content: center;"><i class="fab fa-whatsapp" style="color: #25D366;"></i> Reservasi / Book</a>
+                    </div>
+                </div>
+
+                <!-- Outlet 5: Setiabudi -->
+                <div class="outlet-card">
+                    <div>
+                        <div class="outlet-img-wrap">
+                            <img src="outlet_photos/outlet_setiabudi.jpg" alt="Dim Sum Inc Setiabudi" class="outlet-img" loading="lazy">
+                        </div>
+                        <div class="outlet-city-tag">Jakarta Selatan</div>
+                        <h4 class="outlet-name">Setiabudi</h4>
+                        <p class="outlet-address">
+                            Jl. H. R. Rasuna Said Kav. 62 Ground Floor Unit 103, Setiabudi, Jakarta Selatan
+                        </p>
+                        <div class="outlet-hours-badge">
+                            <i class="fas fa-clock" style="color: var(--color-mimosa);"></i> Open 24 Hours
+                        </div>
+                    </div>
+                    <div class="outlet-action-row">
+                        <a href="https://maps.app.goo.gl/atfRYZqmkxQVvLC49" target="_blank" class="btn btn-terracotta" style="padding: 10px; font-size: 0.78rem;">
+                            <i class="fas fa-map-marker-alt"></i> Buka Google Maps
+                        </a>
+                        <a href="https://wa.me/628119809400?text=Halo%20Dimsum%20Inc%20Setiabudi%2C%20saya%20ingin%20reservasi%20meja" target="_blank" class="btn btn-black" style="padding: 10px 8px; font-size: 0.78rem; width: 100%; justify-content: center;"><i class="fab fa-whatsapp" style="color: #25D366;"></i> Reservasi / Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         RESERVASI & LAYANAN KONTAK (PHOTO 3: +62 811-1289-940)
+    ======================================================== -->
+    <section id="reservations" class="section-reservations">
+        <div class="container">
+            <div class="reservation-grid">
+                <!-- Info Column -->
+                <div class="res-info-col">
+                    <h3>Reservasi &<br>Layanan Kontak</h3>
+                    <p>
+                        Ingin memesan meja untuk arisan, rapat kantor, perayaan ulang tahun, atau memesan catering partai besar? Hubungi layanan pusat pelanggan resmi kami di bawah ini:
+                    </p>
+
+                    <div class="res-contact-highlight">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <div class="hotline-lbl">Layanan Kontak & Customer Care</div>
+                            <div class="hotline-val">+62 811-1289-940</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div>
+                    <form class="res-form-card" onsubmit="handleReservationSubmit(event)">
+                        <h4 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-wood);">Kirim Pesan Reservasi</h4>
+                        
+                        <input type="text" id="resName" class="form-ctrl" placeholder="Nama Lengkap Anda" required>
+                        
+                        <div class="form-row-2">
+                            <select id="resOutlet" class="form-ctrl" required>
+                                <option value="Plaza Festival">Outlet Plaza Festival</option>
+                                <option value="Kemang Raya">Outlet Kemang Raya</option>
+                                <option value="Karawaci">Outlet Karawaci</option>
+                                <option value="Bali">Outlet Bali</option>
+                                <option value="Setiabudi">Outlet Setiabudi</option>
+                            </select>
+                            <input type="number" id="resPax" class="form-ctrl" min="1" placeholder="Jumlah Orang" required>
+                        </div>
+
+                        <input type="text" id="resTime" class="form-ctrl" placeholder="Tanggal & Jam Kedatangan" required>
+                        
+                        <textarea id="resNotes" class="form-ctrl" rows="3" placeholder="Catatan Tambahan / Menu Pilihan..."></textarea>
+
+                        <button type="submit" class="btn btn-terracotta" style="width: 100%;">
+                            <i class="fab fa-whatsapp"></i> Kirim ke WhatsApp (+62 811-1289-940)
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- ========================================================
+         FOOTER (PHOTO 4 CLEAN STRUCTURED DARK)
+    ======================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid-main">
+                <!-- Brand col -->
+                <div>
+                    <div class="footer-brand-title">DIM SUM INC.</div>
+                    <p class="footer-brand-text">
+                        Modern oriental culinary experience with authentic handcrafted dim sum recipes since 2011. Open 24 hours daily across Jakarta, Karawaci, and Bali.
+                    </p>
+                    <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.78rem; font-weight: 700; color: var(--color-mimosa); border: 1px solid rgba(229,168,59,0.4); padding: 4px 12px; border-radius: var(--radius-pill);">
+                        <i class="fas fa-clock"></i> OPEN 24 HOURS
+                    </div>
+                </div>
+
+                <!-- Nav Col -->
+                <div>
+                    <div class="footer-section-title">Navigasi</div>
+                    <ul class="footer-links-col">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#tasting-menus">Buku Menu Digital</a></li>
+                        <li><a href="#artisan">Artisan Craft</a></li>
+                        <li><a href="#featured-menu">Menu Dim Sum</a></li>
+                        <li><a href="#outlets">5 Outlets Kami</a></li>
+                        <li><a href="#reservations">Reservasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Col (Photo 3: +62 811-1289-940) -->
+                <div>
+                    <div class="footer-section-title">Layanan & Kontak</div>
+                    <p style="font-size: 0.88rem; margin-bottom: 12px;">Customer Service & Hotline Resmi:</p>
+                    <a href="https://wa.me/628111289940" target="_blank" style="display: flex; align-items: center; gap: 8px; color: #ffffff; font-size: 1.15rem; font-weight: 800; margin-bottom: 14px;">
+                        <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.3rem;"></i> +62 811-1289-940
+                    </a>
+                    <p style="font-size: 0.82rem; color: #8c8993; line-height: 1.6;">
+                        100% Halal Certified (No Pork, No Lard). Member of Inara Group.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom-row">
+                <div>&copy; 2026 Dim Sum Inc. All Rights Reserved.</div>
+                <div>Open 24 Hours â€¢ Authentic Handcrafted Dim Sum</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================
+         SAJIVA+ 3D BOOK MENU VIEWER MODAL
+    ======================================================== -->
+    <div id="bookViewerBackdrop" class="modal-book-backdrop">
+        <div class="modal-book-container mode-pc" id="modalBookContainer">
+            <!-- Top bar -->
+            <div class="modal-book-top-bar">
+                <div style="display: flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: var(--color-mimosa);">
+                    <i class="fas fa-book-open"></i>
+                    <span id="bookViewerTitle">Dim Sum Inc Signature</span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <!-- Dual View Switcher (PC Spread 2 Hal vs Mobile Single 1 Hal) -->
+                    <div class="view-mode-pill-bar">
+                        <button type="button" id="btnModePc" class="btn-mode-pill active" onclick="setViewMode('pc')">
+                            <i class="fas fa-desktop"></i>
+                            <span>PC View (2 Hal)</span>
+                        </button>
+                        <button type="button" id="btnModeMobile" class="btn-mode-pill" onclick="setViewMode('mobile')">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile View (1 Hal)</span>
+                        </button>
+                    </div>
+
+                    <!-- Zoom Toggle Button -->
+                    <button type="button" class="btn-book-tool" id="btnToggleZoom" onclick="toggleBookZoom()" title="Perbesar Halaman (Klik gambar juga bisa)">
+                        <i class="fas fa-search-plus"></i>
+                        <span id="zoomText">Zoom</span>
+                    </button>
+
+                    <!-- Fullscreen Toggle Button -->
+                    <button type="button" class="btn-book-tool" id="btnToggleFs" onclick="toggleBookFullscreen()" title="Layar Penuh">
+                        <i class="fas fa-expand"></i>
+                    </button>
+
+                    <!-- Close Button -->
+                    <button onclick="closeBookViewer()" style="background: rgba(255,255,255,0.08); border: 1px solid var(--border-dark); width: 34px; height: 34px; border-radius: 50%; color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;" title="Tutup">&times;</button>
+                </div>
+            </div>
+
+            <!-- 3 Tabs (DSI Signature, DSI Bali, Plaza Festival) -->
+            <div class="modal-book-nav-tabs">
+                <button class="btn-book-tab active" id="tabBook-signature" onclick="switchActiveBook('signature')">
+                    <i class="fas fa-star" style="color: var(--color-mimosa);"></i> DSI Signature
+                </button>
+                <button class="btn-book-tab" id="tabBook-bali" onclick="switchActiveBook('bali')">
+                    <i class="fas fa-umbrella-beach"></i> DSI Bali
+                </button>
+                <button class="btn-book-tab" id="tabBook-regular" onclick="switchActiveBook('regular')">
+                    <i class="fas fa-map-marker-alt"></i> Plaza Festival, Kemang & Karawaci
+                </button>
+            </div>
+
+            <!-- Viewer Header & Counter Row -->
+            <div class="modal-book-info-row">
+                <div>
+                    <h4 id="bookHeadline" style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #ffffff; letter-spacing: 0.05em; margin-bottom: 2px;">DIM SUM INC MENU</h4>
+                    <p id="bookSubtitle" style="font-size: 0.76rem; color: #a19da7;">Buku Menu Dim Sum Inc Signature</p>
+                </div>
+                <div style="background: #ffffff; color: #0c0b0d; padding: 4px 14px; border-radius: var(--radius-pill); font-size: 0.85rem; font-weight: 800; white-space: nowrap;">
+                    <span id="bookCurrentPage">1</span> <span id="bookTotalPages">/ 6</span>
+                </div>
+            </div>
+
+            <!-- HUGE VIEWPORT - ULTRA CRISP READABILITY (Click to Zoom) -->
+            <div class="book-slide-viewport spine-center" id="bookSlideViewport" onclick="toggleBookZoom()" title="Klik untuk memperbesar / memperkecil tulisan">
+                <div class="book-slide-stage">
+                    <img id="bookActiveImg" src="menu_dsi_signature_spread/spread_01.jpg" alt="Menu Lembar 1" class="book-slide-img">
+                </div>
+            </div>
+
+            <!-- Controls: BACK, Slider, NEXT -->
+            <div class="book-controls-row">
+                <button type="button" class="btn-book-nav" id="btnBookPrev" onclick="prevBookSlide()" disabled>
+                    <i class="fas fa-chevron-left" style="font-size: 0.72rem;"></i>
+                    <span>BACK</span>
+                </button>
+
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                    <input type="range" id="bookRangeSlider" min="1" max="6" value="1" oninput="jumpBookSlide(this.value)" class="book-range-slider">
+                    <div id="bookPageIndicator" style="font-size: 0.74rem; color: #a19da7; font-weight: 600;">Lembar 1 dari 6 (2 Halaman Cetak)</div>
+                </div>
+
+                <button type="button" class="btn-book-nav" id="btnBookNext" onclick="nextBookSlide()">
+                    <span>NEXT</span>
+                    <i class="fas fa-chevron-right" style="font-size: 0.72rem;"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Floating WhatsApp Hotline Button -->
+    <a href="https://wa.me/628111289940?text=Halo%20Dimsum%20Inc%2C%20saya%20ingin%20memesan%20dimsum" target="_blank" class="floating-wa-btn">
+        <i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i>
+        <span>Chat Customer Service</span>
+    </a>
+
+    <!-- ========================================================
+         JAVASCRIPT LOGIC
+    ======================================================== -->
+    <script>
+        // ========================================================
+        // 3 MENU BOOKS DEFINITION (DUAL MODE: PC SPREAD & MOBILE SINGLE)
+        // ========================================================
+        const allBooks = {
+            signature: {
+                key: 'signature',
+                title: 'Dim Sum Inc Signature (DSI 5)',
+                subtitle: 'Buku Menu Dim Sum Inc Signature',
+                mobile: {
+                    folder: 'menu_dsi_signature',
+                    totalPages: 12,
+                    prefix: 'page_',
+                    label: 'Halaman'
+                },
+                pc: {
+                    folder: 'menu_dsi_signature_spread',
+                    totalPages: 6,
+                    prefix: 'spread_',
+                    label: 'Lembar'
+                }
+            },
+            bali: {
+                key: 'bali',
+                title: 'Dim Sum Inc Bali',
+                subtitle: 'Buku Menu Dim Sum Inc Bali (@dimsuminc.bali)',
+                mobile: {
+                    folder: 'menu_dsi_bali',
+                    totalPages: 8,
+                    prefix: 'page_',
+                    label: 'Halaman'
+                },
+                pc: {
+                    folder: 'menu_dsi_bali_spread',
+                    totalPages: 4,
+                    prefix: 'spread_',
+                    label: 'Lembar'
+                }
+            },
+            regular: {
+                key: 'regular',
+                title: 'Plaza Festival, Kemang & Karawaci',
+                subtitle: 'Buku Menu Dim Sum Inc 1-3 (@dimsuminc.jkt)',
+                mobile: {
+                    folder: 'menu_dsi_regular',
+                    totalPages: 8,
+                    prefix: 'page_',
+                    label: 'Halaman'
+                },
+                pc: {
+                    folder: 'menu_dsi_regular_spread',
+                    totalPages: 4,
+                    prefix: 'spread_',
+                    label: 'Lembar'
+                }
+            }
+        };
+
+        let currentActiveBookKey = 'signature';
+        let currentActivePageNum = 1;
+        // Auto-detect mobile view (width <= 768px -> mobile single page; width > 768px -> pc 2-page spread)
+        let currentViewMode = window.innerWidth <= 768 ? 'mobile' : 'pc';
+
+        // Preload cache
+        const preloadedImages = new Set();
+        function preloadPageImage(folder, prefix, num) {
+            const numStr = num < 10 ? '0' + num : '' + num;
+            const src = `${folder}/${prefix}${numStr}.jpg`;
+            if (!preloadedImages.has(src)) {
+                const img = new Image();
+                img.src = src;
+                preloadedImages.add(src);
+            }
+        }
+
+        // Switch View Mode: 'pc' (2 Hal / Spread) vs 'mobile' (1 Hal)
+        function setViewMode(mode) {
+            if (mode !== 'pc' && mode !== 'mobile') return;
+            currentViewMode = mode;
+
+            const container = document.getElementById('modalBookContainer');
+            const viewport = document.getElementById('bookSlideViewport');
+            if (container) {
+                if (mode === 'pc') {
+                    container.classList.add('mode-pc');
+                    container.classList.remove('mode-mobile');
+                    if (viewport) {
+                        viewport.classList.remove('spine-left');
+                        viewport.classList.add('spine-center');
+                    }
+                } else {
+                    container.classList.add('mode-mobile');
+                    container.classList.remove('mode-pc');
+                    if (viewport) {
+                        viewport.classList.remove('spine-center');
+                        viewport.classList.add('spine-left');
+                    }
+                }
+            }
+
+            const btnPc = document.getElementById('btnModePc');
+            const btnMobile = document.getElementById('btnModeMobile');
+            if (btnPc && btnMobile) {
+                if (mode === 'pc') {
+                    btnPc.classList.add('active');
+                    btnMobile.classList.remove('active');
+                } else {
+                    btnMobile.classList.add('active');
+                    btnPc.classList.remove('active');
+                }
+            }
+
+            // Adjust page number smoothly
+            const book = allBooks[currentActiveBookKey];
+            const cfg = book[mode];
+            if (mode === 'pc') {
+                currentActivePageNum = Math.min(cfg.totalPages, Math.max(1, Math.ceil(currentActivePageNum / 2)));
+            } else {
+                currentActivePageNum = Math.min(cfg.totalPages, Math.max(1, (currentActivePageNum - 1) * 2 + 1));
+            }
+
+            renderBookPage(currentActivePageNum);
+        }
+
+        function openBookViewer(bookKey = 'signature', page = 1) {
+            const modal = document.getElementById('bookViewerBackdrop');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Auto sync view mode based on screen size on open
+                const autoMode = window.innerWidth <= 768 ? 'mobile' : 'pc';
+                setViewMode(autoMode);
+                switchActiveBook(bookKey, page);
+            }
+        }
+
+        function closeBookViewer() {
+            const modal = document.getElementById('bookViewerBackdrop');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function switchActiveBook(bookKey, targetPage = 1) {
+            if (isBookZoomed) toggleBookZoom();
+            if (!allBooks[bookKey]) bookKey = 'signature';
+            currentActiveBookKey = bookKey;
+
+            // Update Tab Active State
+            ['signature', 'bali', 'regular'].forEach(k => {
+                const tab = document.getElementById(`tabBook-${k}`);
+                if (tab) {
+                    if (k === bookKey) tab.classList.add('active');
+                    else tab.classList.remove('active');
+                }
+            });
+
+            const book = allBooks[bookKey];
+            const cfg = book[currentViewMode];
+
+            const titleEl = document.getElementById('bookViewerTitle');
+            if (titleEl) titleEl.textContent = book.title;
+
+            const subEl = document.getElementById('bookSubtitle');
+            if (subEl) subEl.textContent = book.subtitle;
+
+            const totalEl = document.getElementById('bookTotalPages');
+            if (totalEl) totalEl.textContent = `/ ${cfg.totalPages}`;
+
+            const slider = document.getElementById('bookRangeSlider');
+            if (slider) slider.max = cfg.totalPages;
+
+            // Preload all pages of current mode
+            for (let i = 1; i <= cfg.totalPages; i++) {
+                preloadPageImage(cfg.folder, cfg.prefix, i);
+            }
+
+            renderBookPage(targetPage);
+        }
+
+                // Zoom and Fullscreen state
+        let isBookZoomed = false;
+        let isBookFullscreen = false;
+
+        function toggleBookZoom() {
+            const viewport = document.getElementById('bookSlideViewport');
+            const btn = document.getElementById('btnToggleZoom');
+            const text = document.getElementById('zoomText');
+            if (!viewport) return;
+
+            isBookZoomed = !isBookZoomed;
+            if (isBookZoomed) {
+                viewport.classList.add('is-zoomed');
+                if (btn) btn.classList.add('active');
+                if (text) text.textContent = 'Reset';
+                // Center scroll position on zoom
+                setTimeout(() => {
+                    viewport.scrollTop = viewport.scrollHeight / 4;
+                    viewport.scrollLeft = viewport.scrollWidth / 4;
+                }, 50);
+            } else {
+                viewport.classList.remove('is-zoomed');
+                if (btn) btn.classList.remove('active');
+                if (text) text.textContent = 'Zoom';
+            }
+        }
+
+        function toggleBookFullscreen() {
+            const container = document.getElementById('modalBookContainer');
+            const btn = document.getElementById('btnToggleFs');
+            if (!container) return;
+
+            isBookFullscreen = !isBookFullscreen;
+            if (isBookFullscreen) {
+                container.classList.add('is-fullscreen');
+                if (btn) {
+                    btn.classList.add('active');
+                    btn.innerHTML = '<i class="fas fa-compress"></i>';
+                }
+            } else {
+                container.classList.remove('is-fullscreen');
+                if (btn) {
+                    btn.classList.remove('active');
+                    btn.innerHTML = '<i class="fas fa-expand"></i>';
+                }
+            }
+        }
+
+        function renderBookPage(p, dir = '') {
+            const book = allBooks[currentActiveBookKey];
+            if (!book) return;
+            const cfg = book[currentViewMode];
+
+            let pageNum = parseInt(p, 10);
+            if (isNaN(pageNum) || pageNum < 1) pageNum = 1;
+            if (pageNum > cfg.totalPages) pageNum = cfg.totalPages;
+            currentActivePageNum = pageNum;
+
+            const imgEl = document.getElementById('bookActiveImg');
+            const pStr = pageNum < 10 ? '0' + pageNum : '' + pageNum;
+            const targetSrc = `${cfg.folder}/${cfg.prefix}${pStr}.jpg`;
+
+            if (imgEl) {
+                imgEl.classList.remove('slide-turning-next', 'slide-turning-prev');
+                void imgEl.offsetWidth; // trigger reflow
+                if (dir === 'next') imgEl.classList.add('slide-turning-next');
+                else if (dir === 'prev') imgEl.classList.add('slide-turning-prev');
+
+                imgEl.src = targetSrc;
+                imgEl.alt = `${book.title} - ${cfg.label} ${pageNum}`;
+            }
+
+            // Update Page Indicators
+            const currEl = document.getElementById('bookCurrentPage');
+            if (currEl) currEl.textContent = pageNum;
+
+            const totalEl = document.getElementById('bookTotalPages');
+            if (totalEl) totalEl.textContent = `/ ${cfg.totalPages}`;
+
+            const indicatorEl = document.getElementById('bookPageIndicator');
+            if (indicatorEl) {
+                if (currentViewMode === 'pc') {
+                    indicatorEl.textContent = `Lembar ${pageNum} dari ${cfg.totalPages} (2 Halaman Cetak)`;
+                } else {
+                    indicatorEl.textContent = `Halaman ${pageNum} dari ${cfg.totalPages}`;
+                }
+            }
+
+            const slider = document.getElementById('bookRangeSlider');
+            if (slider) {
+                slider.max = cfg.totalPages;
+                slider.value = pageNum;
+            }
+
+            // Nav buttons disabled state
+            const prevBtn = document.getElementById('btnBookPrev');
+            const nextBtn = document.getElementById('btnBookNext');
+            if (prevBtn) prevBtn.disabled = pageNum <= 1;
+            if (nextBtn) nextBtn.disabled = pageNum >= cfg.totalPages;
+        }
+
+        function prevBookSlide() {
+            const book = allBooks[currentActiveBookKey];
+            const cfg = book[currentViewMode];
+            if (currentActivePageNum > 1) {
+                renderBookPage(currentActivePageNum - 1, 'prev');
+            }
+        }
+
+        function nextBookSlide() {
+            const book = allBooks[currentActiveBookKey];
+            const cfg = book[currentViewMode];
+            if (currentActivePageNum < cfg.totalPages) {
+                renderBookPage(currentActivePageNum + 1, 'next');
+            }
+        }
+
+        function jumpBookSlide(val) {
+            renderBookPage(val);
+        }
+
+        // WhatsApp Order from Book Viewer (Photo 1 Button)
+        function orderCurrentBookWA() {
+            const book = allBooks[currentActiveBookKey];
+            const cfg = book ? book[currentViewMode] : null;
+            const pageDesc = currentViewMode === 'pc' ? `Lembar ${currentActivePageNum}` : `Halaman ${currentActivePageNum}`;
+            const bookTitle = book ? book.title : 'Buku Menu Dim Sum Inc';
+            const msg = `Halo Dimsum Inc, saya sedang melihat buku menu *${bookTitle}* (${pageDesc}) dan ingin memesan hidangan. Mohon dibantu untuk proses pesanannya. Terima kasih!`;
+            window.open(`https://wa.me/628111289940?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // WhatsApp Direct Order for Single Dish
+        function orderWA(dishName) {
+            const msg = `Halo Dim Sum Inc, saya ingin memesan menu favorit: *${dishName}*. Mohon konfirmasi ketersediaan di outlet terdekat. Terima kasih!`;
+            window.open(`https://wa.me/628111289940?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // Filter dishes across all 37 authentic items
+        function filterDishes(cat, btnEl) {
+            const buttons = document.querySelectorAll('.btn-filter');
+            buttons.forEach(b => b.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+
+            const cards = document.querySelectorAll('.dish-card');
+            cards.forEach(card => {
+                if (cat === 'all') {
+                    card.style.display = 'flex';
+                } else {
+                    const cardCat = card.getAttribute('data-cat');
+                    if (cardCat === cat) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Touch Swipe Gestures
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const viewport = document.getElementById('bookSlideViewport');
+        if (viewport) {
+            viewport.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            viewport.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+        }
+
+        function handleSwipe() {
+            const diff = touchEndX - touchStartX;
+            if (Math.abs(diff) > 40) {
+                if (diff < 0) nextBookSlide();
+                else prevBookSlide();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', e => {
+            const modal = document.getElementById('bookViewerBackdrop');
+            if (modal && modal.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') prevBookSlide();
+                else if (e.key === 'ArrowRight') nextBookSlide();
+                else if (e.key === 'Escape') closeBookViewer();
+            }
+        });
+
+        // Close on backdrop click
+        document.addEventListener('click', e => {
+            const modal = document.getElementById('bookViewerBackdrop');
+            if (e.target === modal) closeBookViewer();
+        });
+
+        // Window resize auto sync mode if not manually changed
+        window.addEventListener('resize', () => {
+            const modal = document.getElementById('bookViewerBackdrop');
+            if (modal && modal.classList.contains('active')) {
+                // Keep smooth view mode
+            }
+        });
+
+        // Mobile Nav Drawer Toggle
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobileNavDrawer');
+            if (drawer) drawer.classList.toggle('active');
+        }
+
+        // Reservation Form Submission to WhatsApp
+        function submitReservation(e) {
+            e.preventDefault();
+            const name = document.getElementById('resName').value;
+            const phone = document.getElementById('resPhone').value;
+            const outlet = document.getElementById('resOutlet').value;
+            const pax = document.getElementById('resPax').value;
+            const date = document.getElementById('resDate').value;
+            const time = document.getElementById('resTime').value;
+            const notes = document.getElementById('resNotes').value;
+
+            const text = `*RESERVASI MEJA DIM SUM INC*\n\nNama: ${name}\nNo. WhatsApp: ${phone}\nOutlet Pilihan: ${outlet}\nJumlah Orang: ${pax} Orang\nTanggal: ${date}\nJam: ${time}\nCatatan Khusus: ${notes || '-'}\n\nMohon konfirmasi ketersediaan meja. Terima kasih!`;
+            window.open(`https://wa.me/628111289940?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        console.log("Dim Sum Inc. Modern Luxury Web initialized with 37 dishes & dual-mode menu viewer!");
+    </script>
+
+    <!-- ========================================================
+         DISH PHOTO PREVIEW MODAL
+    ======================================================== -->
+    <div id="dishPreviewModal" class="dish-modal-overlay" onclick="closeDishModal(event)">
+        <div class="dish-modal-container" onclick="event.stopPropagation()">
+            <button class="dish-modal-close" onclick="closeDishModal()" title="Tutup Foto">&times;</button>
+            <div class="dish-modal-media">
+                <img id="dishModalImg" src="" alt="Dish Photo">
+                <span id="dishModalCat" class="dish-modal-cat-badge">Dim Sum</span>
+            </div>
+            <div class="dish-modal-body">
+                <div class="dish-modal-meta">
+                    <span class="dish-halal-dot"></span> Halal Certified &bull; Handcrafted Daily
+                </div>
+                <h3 id="dishModalTitle" class="dish-modal-title">Nama Menu</h3>
+                <p id="dishModalDesc" class="dish-modal-desc">Deskripsi menu lezat Dim Sum Inc.</p>
+                <div class="dish-modal-price-box">
+                    <span class="dish-modal-price-lbl">Harga Porsi</span>
+                    <span id="dishModalPrice" class="dish-modal-price-val">Rp 35.000</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        /* Dish Photo Preview Modal */
+        function openDishModal(cardEl) {
+            if (!cardEl) return;
+            const imgEl = cardEl.querySelector('.dish-thumb img');
+            const nameEl = cardEl.querySelector('.dish-name');
+            const descEl = cardEl.querySelector('.dish-desc');
+            const priceEl = cardEl.querySelector('.dish-price');
+            const catBadge = cardEl.querySelector('.dish-cat-badge');
+
+            const modalImg = document.getElementById('dishModalImg');
+            const modalTitle = document.getElementById('dishModalTitle');
+            const modalDesc = document.getElementById('dishModalDesc');
+            const modalPrice = document.getElementById('dishModalPrice');
+            const modalCat = document.getElementById('dishModalCat');
+
+            if (modalImg) {
+                modalImg.src = imgEl ? imgEl.src : '';
+                modalImg.alt = nameEl ? nameEl.innerText : 'Dim Sum';
+            }
+            if (modalTitle) modalTitle.innerText = nameEl ? nameEl.innerText : '';
+            if (modalDesc) modalDesc.innerText = descEl ? descEl.innerText : '';
+            if (modalPrice) modalPrice.innerText = priceEl ? priceEl.innerText : 'Rp 35.000';
+            if (modalCat) {
+                const catText = catBadge ? catBadge.innerText : (cardEl.dataset.cat === 'fried' ? 'Fried Dim Sum' : 'Steamed Dim Sum');
+                modalCat.innerText = catText;
+            }
+
+            const modal = document.getElementById('dishPreviewModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeDishModal(e) {
+            if (e && e.target && e.target.closest && e.target.closest('.dish-modal-container') && !e.target.classList.contains('dish-modal-close')) {
+                return;
+            }
+            const modal = document.getElementById('dishPreviewModal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeDishModal();
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
